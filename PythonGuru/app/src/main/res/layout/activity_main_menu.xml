@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainMenuActivity">
+        tools:context=".MainMenuActivity" android:background="?attr/colorPrimaryDark">
     <TextView
             android:text="@string/mainMenuTitle"
             android:layout_width="wrap_content"
@@ -14,21 +14,25 @@
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.476" app:layout_constraintVertical_bias="0.096"/>
+            app:layout_constraintHorizontal_bias="0.476" app:layout_constraintVertical_bias="0.096"
+            android:textColor="@android:color/white"/>
     <Button
             android:text="@string/lessonsButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/lessonsButton" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            android:id="@+id/lessonsButton" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
             app:layout_constraintEnd_toStartOf="@+id/progressButton" android:layout_marginEnd="8dp"
             android:layout_marginTop="216dp" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.544"/>
+            app:layout_constraintHorizontal_bias="0.544" android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"/>
     <Button
             android:text="@string/progressButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/progressButton" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="88dp"
-            android:layout_marginTop="216dp" app:layout_constraintTop_toTopOf="parent"/>
+            android:layout_marginTop="216dp" app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/colorPrimary" android:textColor="@android:color/white"/>
     <Button
             android:text="@string/testsButton"
             android:layout_width="wrap_content"
@@ -36,16 +40,18 @@
             android:id="@+id/testsButton" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/lessonsButton" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="76dp" app:layout_constraintVertical_bias="0.165"/>
+            android:layout_marginStart="76dp" app:layout_constraintVertical_bias="0.165"
+            android:background="@color/colorPrimary" android:textColor="@android:color/white"/>
     <Button
             android:text="@string/profileButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="139dp"
+            android:layout_height="42dp"
             android:id="@+id/profileButton" app:layout_constraintStart_toEndOf="@+id/testsButton"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/progressButton"
-            app:layout_constraintHorizontal_bias="0.426" app:layout_constraintVertical_bias="0.167"/>
+            app:layout_constraintHorizontal_bias="0.426" app:layout_constraintVertical_bias="0.167"
+            android:background="@color/colorPrimary" android:textColor="@android:color/white"/>
     <TextView
             android:text="@string/welcomeText"
             android:layout_width="wrap_content"
@@ -54,5 +60,6 @@
             app:layout_constraintTop_toBottomOf="@+id/textView5" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintHorizontal_bias="0.48" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.019"/>
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.019"
+            android:textColor="@android:color/white"/>
 </android.support.constraint.ConstraintLayout>
