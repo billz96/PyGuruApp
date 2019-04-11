@@ -34,16 +34,25 @@ class ProgressActivity : AppCompatActivity() {
 
         // get user's name
         val sharedPref: SharedPreferences = this.getSharedPreferences("PyGuruStudent", Context.MODE_PRIVATE)
-        val username = sharedPref.getString("PyGuruUser", "")
+        val username : String = sharedPref.getString("PyGuruUser", "")
+
+        val marksColView : TextView = findViewById(R.id.marksColumn)
+        val txt = marksColView.text.toString()
+        marksColView.text = username + "'s " + txt
 
         // find user's marks
-        val marksStrs = dbHelper.getMarks(username).split(",")
-        val realMarks = marksStrs.map { markStr -> markStr.toFloat() }
+        val marksStr : String = dbHelper.getMarks(username)
 
-        // display marks and comments
-        marksViews.forEachIndexed { index, markView ->
-            markView.text = marksStrs[index] // show mark
-            commentsViews[index].text = dbHelper.commentMark(index, realMarks[index]) // show comment
+        if (!marksStr.isEmpty()) {
+            val marksStrs = marksStr.split(",")
+            val realMarks = marksStrs.map { markStr -> markStr.toFloat() }
+
+            // display marks and comments
+            marksViews.forEachIndexed { index, markView ->
+                markView.text = marksStrs[index] // show mark
+                commentsViews[index].text = dbHelper.commentMark(index, realMarks[index]) // show comment
+            }
+
         }
     }
 }

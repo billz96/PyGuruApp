@@ -35,6 +35,7 @@ class ProfileActivity : AppCompatActivity() {
                     if (!res) {
                         Toast.makeText(this, "Something gone wrong try again.", Toast.LENGTH_LONG).show()
                     }
+                    Toast.makeText(this, "Your password was successfully changed.", Toast.LENGTH_LONG).show()
                 }
             } else {
                 Toast.makeText(this, "You must fill the form.", Toast.LENGTH_LONG).show()

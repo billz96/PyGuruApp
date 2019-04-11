@@ -55,4 +55,5 @@
     <string name="comment3">Comment:</string>
     <string name="new_password">New Password</string>
     <string name="repeat_password">Repeat Password</string>
+    <string name="marksColText">marks</string>
 </resources>

@@ -34,15 +34,9 @@ class RegisterActivity : AppCompatActivity() {
                     // new student
                     res = dbHelper.insertUser(username.text.toString(), password.text.toString())
                     if (res) {
-                        // save user's username
-                        val sharedPref: SharedPreferences = this.getSharedPreferences("PyGuruStudent", Context.MODE_PRIVATE)
-                        val editor : SharedPreferences.Editor = sharedPref.edit()
-                        editor.putString("PyGuruStudent", username.text.toString())
-                        editor.apply()
-
-                        // go to main menu
-                        val intent = Intent(this, MainMenuActivity::class.java)
-                        startActivity(intent) // start main menu activity
+                        // go to login screen
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent) // start login activity
                     } else {
                         // something gone wrong try again
                         Toast.makeText(this, "Something gone wrong, please try again.", Toast.LENGTH_LONG).show()

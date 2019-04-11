@@ -5,6 +5,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.content.ContentValues;
+import android.database.sqlite.SQLiteException;
+import android.util.Log;
+
 import java.util.HashMap;
 
 public class PyGuruHelper extends SQLiteOpenHelper {
@@ -30,7 +33,7 @@ public class PyGuruHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(
-                "CREATE TABLE IF NOT EXISTS Students(id INTEGER PRIMARY KEY AUTOINCREMENT, username VARCHAR, password VARCHAR, marks TEXT DEFAULT \"0.0,0.0,0.0,0.0,0.0,0.0,0.0\")"
+                "CREATE TABLE IF NOT EXISTS Students(id INTEGER PRIMARY KEY AUTOINCREMENT, username VARCHAR, password VARCHAR, marks TEXT)"
         );
         db.execSQL(
                 "CREATE TABLE IF NOT EXISTS Answers(id INTEGER PRIMARY KEY AUTOINCREMENT, body TEXT, isCorrect BOOLEAN, question INTEGER)"
@@ -65,15 +68,20 @@ public class PyGuruHelper extends SQLiteOpenHelper {
     public boolean findUser (String username, String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         String[] data = {username, password};
-        Cursor res = db.rawQuery("SELECT * FROM Students WHERE username = ? AND password = ?", data);
+        Cursor res;
+        try {
+            res = db.rawQuery("SELECT * FROM Students WHERE username = ? AND password = ?", data);
+            boolean b = res.getCount() == 1; // check if user exists
 
-        boolean b = res.getCount() == 1; // check if user exists
+            if (!res.isClosed()) {
+                res.close();
+            }
 
-        if (!res.isClosed()) {
-            res.close();
+            return b;
+        } catch (Exception e) {
+            Log.e("Silly-Err: ", e.getMessage());
+            return false;
         }
-
-        return b;
     }
 
     public boolean changePassword(String username, String newPassword) {
@@ -81,69 +89,103 @@ public class PyGuruHelper extends SQLiteOpenHelper {
 
         // update password
         String[] data = {newPassword, username};
-        Cursor res = db.rawQuery("UPDATE Students SET password = ? WHERE username = ? ", data);
+        Cursor res;
 
-        boolean b = res.getPosition() != -1; // did something gone wrong
+        try {
+            res = db.rawQuery("UPDATE Students SET password = ? WHERE username = ? ", data);
+            res.moveToFirst();
 
-        if (!res.isClosed()) {
-            res.close();
+            boolean b = res.getPosition() != -1; // did something gone wrong
+
+            if (!res.isClosed()) {
+                res.close();
+            }
+
+            return b;
+        } catch (Exception e) {
+            Log.e("Silly-Err: ", e.getMessage());
+            return false;
         }
-
-        return b;
     }
 
     public String getMarks (String username) {
         // get user's marks
         SQLiteDatabase db = this.getWritableDatabase();
         String[] data = {username};
-        Cursor res = db.rawQuery("SELECT * FROM Students WHERE username = ?", data);
+        Cursor res;
 
-        // get user's marks
-        int marksIndex = res.getColumnIndex("marks");
-        String marks = res.getString(marksIndex); // ex: "0.55,0.59,0.63,0.89,0.0,0.0,0.0"
+        try {
+            res = db.rawQuery("SELECT * FROM Students WHERE username = ?", data);
+            res.moveToFirst();
 
-        if (!res.isClosed()) {
-            res.close();
+            // get user's marks
+            int marksIndex = res.getColumnIndexOrThrow("marks"); // -> -1 if column doesn't exist
+            String marks = res.getString(marksIndex); // ex: "0.55,0.59,0.63,0.89,0.0,0.0,0.0"
+
+            if (!res.isClosed()) {
+                res.close();
+            }
+
+            return marks;
+        } catch (Exception e) {
+            Log.e("Some-Stupid-Err: ", e.getMessage());
+            Log.e("Some-Stupid-Err: ", "" + e.getStackTrace());
+            return "";
         }
-        return marks;
     }
 
     public boolean updateMark (String username, float mark, int quiz) { // quiz: 1-7, mark: 0.0-1.0
         // get user's marks
         SQLiteDatabase db = this.getWritableDatabase();
         String[] data = {username};
-        Cursor res = db.rawQuery("SELECT * FROM Students WHERE username = ?", data);
+        Cursor res;
 
-        // get user's marks
-        int marksIndex = res.getColumnIndex("marks");
-        String[] marks = res.getString(marksIndex).split(",");
+        try {
+            res = db.rawQuery("SELECT * FROM Students WHERE username = ?", data);
+            res.moveToFirst();
 
-        // update marks array
-        marks[quiz-1] = Float.toString(mark);
-        String finalMarks = "";
-        for (int i = 0; i < marks.length; i++) {
-            if (i < marks.length) {
-                finalMarks = finalMarks + marks[i] + ",";
-            } else {
-                finalMarks = finalMarks + marks[i];
+            // get user's marks
+            int marksIndex = res.getColumnIndex("marks");
+            String[] marks = res.getString(marksIndex).split(",");
+
+            // update marks array
+            marks[quiz-1] = Float.toString(mark);
+            String finalMarks = "";
+            for (int i = 0; i < marks.length; i++) {
+                if (i < marks.length) {
+                    finalMarks = finalMarks + marks[i] + ",";
+                } else {
+                    finalMarks = finalMarks + marks[i];
+                }
             }
+
+            // update user's marks in database
+            String[] data2 = {finalMarks, username};
+
+            Cursor res2;
+
+            try {
+                res2 = db.rawQuery("UPDATE Students SET marks = ? WHERE username = ?", data2);
+
+                boolean b2 = res2.getPosition() != -1; // did something gone wrong
+
+                if (!res.isClosed()) {
+                    res.close();
+                }
+
+                if (!res2.isClosed()) {
+                    res2.close();
+                }
+
+                return b2;
+            } catch (SQLiteException e) {
+                Log.e("SQL-Err: ", e.getMessage());
+                return false;
+            }
+        } catch (SQLiteException e) {
+            Log.e("SQL-Err: ", e.getMessage());
+            return false;
         }
-
-        // update user's marks in database
-        String[] data2 = {finalMarks, username};
-        Cursor res2 = db.rawQuery("UPDATE Students SET marks = ? WHERE username = ? ", data2);
-
-        boolean b2 = res2.getPosition() != -1; // did something gone wrong
-
-        if (!res.isClosed()) {
-            res.close();
-        }
-
-        if (!res2.isClosed()) {
-            res2.close();
-        }
-
-        return b2;
     }
 
     public String commentMark(int quizIndex, float mark) { // quiz: 1-7, mark: 0.0-1.0
@@ -173,103 +215,137 @@ public class PyGuruHelper extends SQLiteOpenHelper {
     public HashMap<String, String>[] getQuestions(int quiz) { // quiz: 1-7 and NOT 0-6!
         SQLiteDatabase db = this.getWritableDatabase();
         String[] data = {Integer.toString(quiz)};
+        HashMap<String, String>[] questions = new HashMap[]{};
 
         // find quiz's questions
-        Cursor res = db.rawQuery("SELECT * FROM Questions WHERE quizNo = ?", data);
-        res.moveToFirst();
+        Cursor res;
 
-        HashMap<String, String>[] questions = new HashMap[]{};
-        while (res.isAfterLast() == false) {
-            HashMap<String, String> item = new HashMap();
-            item.put("id", res.getString(res.getColumnIndex("id")));
-            item.put("body", res.getString(res.getColumnIndex("body")));
-            item.put("quizNo", res.getString(res.getColumnIndex("quizNo")));
+        try {
+            res = db.rawQuery("SELECT * FROM Questions WHERE quizNo = ?", data);
+            res.moveToFirst();
 
-            questions[res.getPosition()] = item;
-            res.moveToNext();
+            while (res.isAfterLast() == false) {
+                HashMap<String, String> item = new HashMap();
+                item.put("id", res.getString(res.getColumnIndex("id")));
+                item.put("body", res.getString(res.getColumnIndex("body")));
+                item.put("quizNo", res.getString(res.getColumnIndex("quizNo")));
+
+                questions[res.getPosition()] = item;
+                res.moveToNext();
+            }
+
+            if (!res.isClosed()) {
+                res.close();
+            }
+
+            return questions;
+        } catch (SQLiteException e) {
+            Log.e("SQL-Err: ", e.getMessage());
+            return questions;
         }
-
-        if (!res.isClosed()) {
-            res.close();
-        }
-
-        return questions;
     }
 
     public HashMap<String, String>[] getAnswers(int question) { // answers: 1-3? and question:1-7/1-14
         SQLiteDatabase db = this.getWritableDatabase();
         String[] data = {Integer.toString(question)};
-
-        // find question's answers
-        Cursor res = db.rawQuery("SELECT * FROM Answers WHERE question = ?", data);
-        res.moveToFirst();
-
         HashMap<String, String>[] answers = new HashMap[]{};
-        while(res.isAfterLast() == false){
-            HashMap<String, String> item = new HashMap();
-            item.put("id", res.getString(res.getColumnIndex("id")));
-            item.put("body", res.getString(res.getColumnIndex("body")));
-            item.put("isCorrect", res.getString(res.getColumnIndex("isCorrect")));
+        Cursor res;
 
-            answers[res.getPosition()] = item;
-            res.moveToNext();
+        try {
+            // find question's answers
+            res = db.rawQuery("SELECT * FROM Answers WHERE question = ?", data);
+            res.moveToFirst();
+
+            while(res.isAfterLast() == false){
+                HashMap<String, String> item = new HashMap();
+                item.put("id", res.getString(res.getColumnIndex("id")));
+                item.put("body", res.getString(res.getColumnIndex("body")));
+                item.put("isCorrect", res.getString(res.getColumnIndex("isCorrect")));
+
+                answers[res.getPosition()] = item;
+                res.moveToNext();
+            }
+
+            if (!res.isClosed()) {
+                res.close();
+            }
+
+            return answers;
+        } catch (SQLiteException e) {
+            Log.e("SQL-Err: ", e.getMessage());
+            return answers;
         }
-
-        if (!res.isClosed()) {
-            res.close();
-        }
-
-        return answers;
     }
 
     public HashMap<String, String>[] getLessonsTitles() {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("SELECT * FROM Lessons", new String[]{});
-        res.moveToFirst();
-
         HashMap<String, String>[] lessons = new HashMap[]{};
-        while(res.isAfterLast() == false){
-            HashMap<String, String> item = new HashMap();
-            item.put("title", res.getString(res.getColumnIndex("title")));
+        Cursor res;
 
-            lessons[res.getPosition()] = item;
-            res.moveToNext();
+        try {
+            res = db.rawQuery("SELECT * FROM Lessons", new String[]{});
+            res.moveToFirst();
+
+            while (res.isAfterLast() == false) {
+                HashMap<String, String> item = new HashMap();
+                item.put("title", res.getString(res.getColumnIndex("title")));
+
+                lessons[res.getPosition()] = item;
+                res.moveToNext();
+            }
+
+            if (!res.isClosed()) {
+                res.close();
+            }
+
+            return lessons;
+        } catch (SQLiteException e) {
+            Log.e("SQL-Err: ", e.getMessage());
+            return lessons;
         }
-
-        if (!res.isClosed()) {
-            res.close();
-        }
-
-        return lessons;
     }
 
     public String[] getLesson(int lesson){ // lesson: 1-6
         SQLiteDatabase db = this.getWritableDatabase();
         String[] data = {Integer.toString(lesson)};
+        Cursor res;
+        Cursor res2;
 
-        // find lesson
-        Cursor res = db.rawQuery("SELECT * FROM Lessons WHERE id = ?", data);
+        try {
+            // find lesson
+            res = db.rawQuery("SELECT * FROM Lessons WHERE id = ?", data);
+            res.moveToFirst();
 
-        // get lesson's content
-        int bodyIndex = res.getColumnIndex("body");
-        int titleIndex = res.getColumnIndex("title");
-        int visitsIndex = res.getColumnIndex("visits");
+            // get lesson's content
+            int bodyIndex = res.getColumnIndex("body");
+            int titleIndex = res.getColumnIndex("title");
+            int visitsIndex = res.getColumnIndex("visits");
 
-        String[] lessonEntry = {res.getString(titleIndex), res.getString(bodyIndex), res.getString(visitsIndex) + 1};
+            String[] lessonEntry = {res.getString(titleIndex), res.getString(bodyIndex), res.getString(visitsIndex) + 1};
 
-        // update lesson's visits whenever someone click it
-        String visits = res.getString(visitsIndex) + 1;
-        String[] data2 = {visits, Integer.toString(lesson)};
-        Cursor res2 = db.rawQuery("UPDATE Lessons SET visits = ? WHERE id = ?", data2);
+            // update lesson's visits whenever someone click it
+            String visits = res.getString(visitsIndex) + 1;
+            String[] data2 = {visits, Integer.toString(lesson)};
 
-        if (!res.isClosed()) {
-            res.close();
+            try {
+                res2 = db.rawQuery("UPDATE Lessons SET visits = ? WHERE id = ?", data2);
+
+                if (!res.isClosed()) {
+                    res.close();
+                }
+
+                if (!res2.isClosed()) {
+                    res2.close();
+                }
+
+                return lessonEntry; // ex: title:"foo bar baz", body:"lorem ipsum...", visits:33 -> current user's visits!
+            } catch (SQLiteException e) {
+                Log.e("SQL-Err: ", e.getMessage());
+                return new String[]{};
+            }
+        } catch (SQLiteException e) {
+            Log.e("SQL-Err: ", e.getMessage());
+            return new String[]{};
         }
-
-        if (!res2.isClosed()) {
-            res2.close();
-        }
-
-        return lessonEntry; // ex: title:"foo bar baz", body:"lorem ipsum...", visits:33 -> current user's visits!
     }
 }
