@@ -34,7 +34,6 @@
     <string name="lesson_1">Lesson 1</string>
     <string name="lesson_2">Lesson 2</string>
     <string name="lesson_4">Lesson 4</string>
-    <string name="lesson_3">Lesson 3</string>
     <string name="lesson_5">Lesson 5</string>
     <string name="lesson_6">Lesson 6</string>
     <string name="your_progress">Your Progress</string>
@@ -56,4 +55,17 @@
     <string name="new_password">New Password</string>
     <string name="repeat_password">Repeat Password</string>
     <string name="marksColText">marks</string>
+    <string name="lesson_4_txt">Lesson 4</string>
+    <string name="lesson_3_txt">Lesson 3</string>
+    <string name="curr_esson_txt">Lesson</string>
+    <string name="visits_txt">visits:</string>
+    <string name="quiz_number_txt">Quiz</string>
+    <string name="q1">TextView</string>
+    <string name="ans1">RadioButton</string>
+    <string name="ans2">RadioButton</string>
+    <string name="ans3">RadioButton</string>
+    <string name="your_final_quiz">Your Final Quiz!</string>
+    <string name="finished_quiz">done</string>
+    <string name="finished_final_quiz">done</string>
+    <string name="choose_txt">Choose yout answer</string>
 </resources>

@@ -49,7 +49,7 @@ class ProgressActivity : AppCompatActivity() {
 
             // display marks and comments
             marksViews.forEachIndexed { index, markView ->
-                markView.text = marksStrs[index] // show mark
+                markView.text = markView.text.toString() + " " + marksStrs[index] // show mark
                 commentsViews[index].text = dbHelper.commentMark(index, realMarks[index]) // show comment
             }
 
