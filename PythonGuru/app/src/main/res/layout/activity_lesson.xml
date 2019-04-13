@@ -9,8 +9,8 @@
 
     <LinearLayout
             android:orientation="vertical"
-            android:layout_width="377dp"
-            android:layout_height="547dp"
+            android:layout_width="356dp"
+            android:layout_height="545dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent">
@@ -28,13 +28,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/currentLesson"
-                tools:layout_editor_absoluteY="60dp" tools:layout_editor_absoluteX="359dp"/>
+                tools:layout_editor_absoluteY="60dp" tools:layout_editor_absoluteX="359dp"
+                android:textColor="@android:color/white"/>
         <TextView
                 android:text="@string/visits_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/visitsText"
-                tools:layout_editor_absoluteY="365dp" tools:layout_editor_absoluteX="368dp"/>
+                tools:layout_editor_absoluteY="365dp" tools:layout_editor_absoluteX="368dp"
+                android:textColor="@android:color/white"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/textView112"/>

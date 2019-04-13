@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteException;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 public class PyGuruHelper extends SQLiteOpenHelper {
@@ -63,73 +64,129 @@ public class PyGuruHelper extends SQLiteOpenHelper {
                         "(5, \"question body 5\", 1, \"answer-1,y;answer-2,n;answer-3,n\")," +
                         "(6, \"question body 6\", 1, \"answer-1,y;answer-2,n;answer-3,n\")," +
                         "(7, \"question body 7\", 1, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(8, \"aaaaaaaaaaaaa 1\", 1, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(9, \"aaaaaaaaaaaaa 2\", 1, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(10, \"aaaaaaaaaaaaa 3\", 1, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(11, \"aaaaaaaaaaaaa 4\", 1, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(12, \"aaaaaaaaaaaaa 5\", 1, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(13, \"aaaaaaaaaaaaa 6\", 1, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(14, \"aaaaaaaaaaaaa 7\", 1, \"answer-1,y;answer-2,n;answer-3,n\")," +
 
                         // quiz 2
                         //id  body              quizNo  answers
-                        "(8, \"question body 1\", 2, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(9, \"question body 2\", 2, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(10, \"question body 3\", 2, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(11, \"question body 4\", 2, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(12, \"question body 5\", 2, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(13, \"question body 6\", 2, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(14, \"question body 7\", 2, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(15, \"question body 1\", 2, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(16, \"question body 2\", 2, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(17, \"question body 3\", 2, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(18, \"question body 4\", 2, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(19, \"question body 5\", 2, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(20, \"question body 6\", 2, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(21, \"question body 7\", 2, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(22, \"bbbbbbbbbbbbb 1\", 2, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(23, \"bbbbbbbbbbbbb 2\", 2, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(24, \"bbbbbbbbbbbbb 3\", 2, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(25, \"bbbbbbbbbbbbb 4\", 2, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(26, \"bbbbbbbbbbbbb 5\", 2, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(27, \"bbbbbbbbbbbbb 6\", 2, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(28, \"bbbbbbbbbbbbb 7\", 2, \"answer-1,y;answer-2,n;answer-3,n\")," +
 
                         // quiz 3
                         //id  body              quizNo  answers
-                        "(15, \"question body 1\", 3, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(16, \"question body 2\", 3, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(17, \"question body 3\", 3, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(18, \"question body 4\", 3, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(19, \"question body 5\", 3, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(20, \"question body 6\", 3, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(21, \"question body 7\", 3, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(29, \"question body 1\", 3, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(30, \"question body 2\", 3, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(31, \"question body 3\", 3, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(32, \"question body 4\", 3, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(33, \"question body 5\", 3, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(34, \"question body 6\", 3, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(35, \"question body 7\", 3, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(36, \"ccccccccccccc 1\", 3, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(37, \"ccccccccccccc 2\", 3, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(38, \"ccccccccccccc 3\", 3, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(39, \"ccccccccccccc 4\", 3, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(40, \"ccccccccccccc 5\", 3, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(41, \"ccccccccccccc 6\", 3, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(42, \"ccccccccccccc 7\", 3, \"answer-1,y;answer-2,n;answer-3,n\")," +
 
                         // quiz 4
                         //id  body              quizNo  answers
-                        "(22, \"question body 1\", 4, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(23, \"question body 2\", 4, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(24, \"question body 3\", 4, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(25, \"question body 4\", 4, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(26, \"question body 5\", 4, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(27, \"question body 6\", 4, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(28, \"question body 7\", 4, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(43, \"question body 1\", 4, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(44, \"question body 2\", 4, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(45, \"question body 3\", 4, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(46, \"question body 4\", 4, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(47, \"question body 5\", 4, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(48, \"question body 6\", 4, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(49, \"question body 7\", 4, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(50, \"ddddddddddddd 1\", 4, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(51, \"ddddddddddddd 2\", 4, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(52, \"ddddddddddddd 3\", 4, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(53, \"ddddddddddddd 4\", 4, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(54, \"ddddddddddddd 5\", 4, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(55, \"ddddddddddddd 6\", 4, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(56, \"ddddddddddddd 7\", 4, \"answer-1,y;answer-2,n;answer-3,n\")," +
 
                         // quiz 5
                         //id  body              quizNo  answers
-                        "(29, \"question body 1\", 5, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(30, \"question body 2\", 5, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(31, \"question body 3\", 5, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(32, \"question body 4\", 5, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(33, \"question body 5\", 5, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(34, \"question body 6\", 5, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(35, \"question body 7\", 5, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(57, \"question body 1\", 5, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(58, \"question body 2\", 5, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(59, \"question body 3\", 5, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(60, \"question body 4\", 5, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(61, \"question body 5\", 5, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(62, \"question body 6\", 5, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(63, \"question body 7\", 5, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(64, \"eeeeeeeeeeeee 1\", 5, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(65, \"eeeeeeeeeeeee 2\", 5, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(66, \"eeeeeeeeeeeee 3\", 5, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(67, \"eeeeeeeeeeeee 4\", 5, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(68, \"eeeeeeeeeeeee 5\", 5, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(69, \"eeeeeeeeeeeee 6\", 5, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(70, \"eeeeeeeeeeeee 7\", 5, \"answer-1,y;answer-2,n;answer-3,n\")," +
 
                         // quiz 6
                         //id  body              quizNo  answers
-                        "(36, \"question body 1\", 6, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(37, \"question body 2\", 6, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(38, \"question body 3\", 6, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(39, \"question body 4\", 6, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(40, \"question body 5\", 6, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(41, \"question body 6\", 6, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(42, \"question body 7\", 6, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(71, \"question body 1\", 6, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(72, \"question body 2\", 6, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(73, \"question body 3\", 6, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(74, \"question body 4\", 6, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(75, \"question body 5\", 6, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(76, \"question body 6\", 6, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(77, \"question body 7\", 6, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(78, \"fffffffffffff 1\", 6, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(79, \"fffffffffffff 2\", 6, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(80, \"fffffffffffff 3\", 6, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(81, \"fffffffffffff 4\", 6, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(82, \"fffffffffffff 5\", 6, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(83, \"fffffffffffff 6\", 6, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(84, \"fffffffffffff 7\", 6, \"answer-1,y;answer-2,n;answer-3,n\")," +
 
                         // quiz 7
                         //id  body              quizNo  answers
-                        "(43, \"question body 1\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(44, \"question body 2\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(45, \"question body 3\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(46, \"question body 4\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(47, \"question body 5\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(48, \"question body 6\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(49, \"question body 7\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(50, \"question body 8\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(51, \"question body 9\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(52, \"question body 10\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(53, \"question body 11\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(54, \"question body 12\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(55, \"question body 13\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
-                        "(56, \"question body 14\", 7, \"answer-1,y;answer-2,n;answer-3,n\")"
+                        "(85, \"question body 1\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(86, \"question body 2\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(87, \"question body 3\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(88, \"question body 4\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(89, \"question body 5\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(90, \"question body 6\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(91, \"question body 7\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(92, \"question body 8\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(93, \"question body 9\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(94, \"question body 10\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(95, \"question body 11\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(96, \"question body 12\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(97, \"question body 13\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(98, \"question body 14\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(99, \"ggggggggggggg 1\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(100, \"ggggggggggggg 2\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(101, \"ggggggggggggg 3\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(102, \"ggggggggggggg 4\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(103, \"ggggggggggggg 5\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(104, \"ggggggggggggg 6\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(105, \"ggggggggggggg 7\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(106, \"ggggggggggggg 8\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(107, \"ggggggggggggg 9\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(108, \"ggggggggggggg 10\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(109, \"ggggggggggggg 11\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(110, \"ggggggggggggg 12\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(111, \"ggggggggggggg 13\", 7, \"answer-1,y;answer-2,n;answer-3,n\")," +
+                        "(112, \"ggggggggggggg 14\", 7, \"answer-1,y;answer-2,n;answer-3,n\")"
         );
     }
 
@@ -317,7 +374,23 @@ public class PyGuruHelper extends SQLiteOpenHelper {
                 res.close();
             }
 
-            return questions;
+            // return seven random questions for simple quizzes(1-6)
+            // and 14 random questions for the final quiz
+            ArrayList<HashMap<String, String>> result = new ArrayList(); // final array list
+            Collections.shuffle(questions); // randomize questions
+
+            // check if we are about to view the final quiz or the simple ones
+            if (quiz < 7) {
+                for (int i = 0; i < 7; i++) {
+                    result.add(questions.get(i)); // take first 7 random questions
+                }
+            } else {
+                for (int i = 0; i < 14; i++) {
+                    result.add(questions.get(i)); // take first 14 random questions
+                }
+            }
+
+            return result;
         } catch (SQLiteException e) {
             Log.e("Silly-Err: ", e.getMessage());
             return new ArrayList();
