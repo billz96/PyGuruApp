@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.widget.Button
 import android.widget.Toast
 
@@ -48,22 +49,26 @@ class FinalQuizActivity : AppCompatActivity() {
 
             // setup listeners that show possible answers
             questionsBtns[index].setOnClickListener {
-                // save all choices(available answers)
-                val editor : SharedPreferences.Editor = sharedPref.edit()
-                editor.putString("PyGuruChoice1", answers[0])
-                editor.commit()
-                editor.putString("PyGuruChoice2", answers[1])
-                editor.commit()
-                editor.putString("PyGuruChoice3", answers[2])
-                editor.commit()
+                if (quiz > 0) {
+                    // save all choices(available answers)
+                    val editor: SharedPreferences.Editor = sharedPref.edit()
+                    editor.putString("PyGuruChoice1", answers[0])
+                    editor.commit()
+                    editor.putString("PyGuruChoice2", answers[1])
+                    editor.commit()
+                    editor.putString("PyGuruChoice3", answers[2])
+                    editor.commit()
 
-                // save question's index
-                editor.putString("PyGuruQuestion", (index+1).toString())
-                editor.commit()
+                    // save question's index
+                    editor.putString("PyGuruQuestion", (index + 1).toString())
+                    editor.commit()
 
-                // go pick an answer
-                val intent = Intent(this, AnswerActivity::class.java)
-                startActivity(intent) // start answer activity
+                    // go pick an answer
+                    val intent = Intent(this, AnswerActivity::class.java)
+                    startActivity(intent) // start answer activity
+                } else {
+                    Toast.makeText(this, "You have already completed the test.", Toast.LENGTH_LONG).show()
+                }
             }
 
         }
@@ -87,8 +92,8 @@ class FinalQuizActivity : AppCompatActivity() {
                 sharedPref.getString("PyGuruAnswer14", "")
             )
 
-            // check if every question is answered
-            if (ans.all { el -> !el.equals("") }) {
+            // check if every question is answered and if the user already answered the test
+            if (ans.all { el -> !el.equals("") } && quiz > 0) {
 
                 // find correct answers
                 val correctAns = ans.filter { el ->
@@ -101,27 +106,55 @@ class FinalQuizActivity : AppCompatActivity() {
                 val username = sharedPref.getString("PyGuruUser", "")
                 val res = dbHelper.updateMark(username, mark, quiz)
                 if (!res) {
-                    Toast.makeText(this, "Something went wrong!", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Something went wrong! Try again.", Toast.LENGTH_LONG).show()
                 }
 
-                // show which answers are wright and which are wrong
-                val ansMsgs = ans.map { a ->
+                // make test invalid by removing the quiz's index
+                val editor : SharedPreferences.Editor = sharedPref.edit()
+                editor.putInt("PyGuruQuiz", -1)
+                editor.commit()
+
+                // remove stored answers
+                for (i in 1..14) {
+                    editor.putString("PyGuruAnswer$i", "")
+                    editor.commit()
+                }
+
+                // find which answers are wright and which are wrong
+                var ansMsgs = ans.mapIndexed { i, a ->
                     val content = a.split(",")
-                    var res = content[0] + " -> "
+                    var res = "Answer-" + i +": "+ content[0] + " -> "
                     if (content[1].equals("y")) {
-                        res = res + "correct\n"
+                        res = res + "Correct"
                     } else {
-                        res = res + "wrong\n"
+                        res = res + "Wrong"
                     }
                     res
                 }
 
-                Toast.makeText(this, "Your answers:\n\t${ansMsgs.joinToString()}", Toast.LENGTH_LONG).show()
+                ansMsgs = listOf("Your answers are:") + ansMsgs
 
-                // show mark
-                Toast.makeText(this, "Your mark is: ${mark.toString().substring(0,4)}(=${correctAns.size}/14)", Toast.LENGTH_LONG).show()
+                // show user's mark and answers
+                // create the builder
+                val dialogBuilder = AlertDialog.Builder(this)
+
+                // prepare the items
+                val msgs = ansMsgs.plus("Your mark is: ${mark.toString().substring(0,4)}(=${correctAns.size}/14)")
+                val items = msgs.toTypedArray() // convert string list to string array
+
+                // show the items
+                dialogBuilder.setItems(items, null)
+                dialogBuilder.setPositiveButton("OK", null)
+                dialogBuilder.show()
+
+                // create alert box
+                val alertBox = dialogBuilder.create()
+                // set title
+                alertBox.setTitle("Your answers and mark")
+                // show alert box
+                alertBox.show()
             } else {
-                Toast.makeText(this, "You must answer every question!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Either there are some missing questions or you have already completed the test.", Toast.LENGTH_LONG).show()
             }
         }
     }

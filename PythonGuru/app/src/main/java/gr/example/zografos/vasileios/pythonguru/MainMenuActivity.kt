@@ -14,7 +14,7 @@ class MainMenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
 
-        val welcomeTxt : TextView = findViewById(R.id.welcomeText)
+        val welcomeTxt : TextView = findViewById<TextView>(R.id.welcomeText)
         var txt : String = welcomeTxt.text.toString()
 
         // get user's name
@@ -59,6 +59,19 @@ class MainMenuActivity : AppCompatActivity() {
             // go to lessons
             val intent = Intent(this, HelpActivity::class.java)
             startActivity(intent) // start help activity
+        }
+
+        val logoutBtn : Button = findViewById(R.id.logout_button)
+        logoutBtn.setOnClickListener {
+            // remove current stored user
+            val sharedPref: SharedPreferences = this.getSharedPreferences("PyGuruStudent", Context.MODE_PRIVATE)
+            val editor : SharedPreferences.Editor = sharedPref.edit()
+            editor.putString("PyGuruUser", "")
+            editor.commit()
+
+            // go to login view again
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent) // start main(login) activity
         }
     }
 }

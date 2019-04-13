@@ -77,5 +77,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/helpBtn" android:background="@color/colorPrimary"
                 android:textColor="@android:color/white"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView132"/>
+        <Button
+                android:text="@string/logout_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/logout_button"
+                android:background="@color/colorPrimary"
+                android:textColor="@android:color/white"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

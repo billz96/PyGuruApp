@@ -82,4 +82,5 @@
     <string name="faq_6">Does this app contains ads?</string>
     <string name="a_6">No there aren\'t any ads.</string>
     <string name="help_button">Help ?</string>
+    <string name="logout_btn">logout</string>
 </resources>
