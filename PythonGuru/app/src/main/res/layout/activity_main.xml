@@ -6,69 +6,111 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity" android:id="@+id/loginForm" android:background="@color/colorPrimaryDark">
-    <TextView
-            android:text="@string/loginFormTitleText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView" android:layout_marginBottom="380dp"
-            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintVertical_bias="0.203" android:textColor="@android:color/white"/>
-    <TextView
-            android:text="@string/linkToRegisterForm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView2" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginBottom="52dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/loginButton"
-            app:layout_constraintHorizontal_bias="0.497" app:layout_constraintVertical_bias="0.712"
-            android:textColor="@android:color/white"/>
-    <Button
-            android:text="@string/submitButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/loginButton" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintHorizontal_bias="0.472" android:layout_marginTop="72dp"
-            app:layout_constraintTop_toBottomOf="@+id/editText4" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.021"
-            android:textColor="@android:color/white" android:background="@color/colorPrimary"/>
-    <TextView
-            android:text="@string/usernameField"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/username" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="44dp"
-            android:layout_marginTop="280dp" app:layout_constraintTop_toTopOf="parent"
-            android:textColor="@android:color/white"/>
-    <TextView
-            android:text="@string/passwordFieldText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/password" android:layout_marginTop="120dp"
-            app:layout_constraintTop_toBottomOf="@+id/username" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="48dp" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.0"
-            android:textColor="@android:color/white"/>
-    <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/editText3"
-            app:layout_constraintStart_toEndOf="@+id/username" android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="184dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView" app:layout_constraintHorizontal_bias="0.506"
-            android:background="@color/colorPrimary"/>
-    <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:ems="10"
-            android:id="@+id/editText4"
-            app:layout_constraintStart_toEndOf="@+id/password" android:layout_marginStart="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginTop="96dp"
-            app:layout_constraintTop_toBottomOf="@+id/editText3" app:layout_constraintHorizontal_bias="0.486"
-            android:background="@color/colorPrimary"/>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="364dp"
+            android:layout_height="620dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView51"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView50"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView49"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView48"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView47"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView45"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView46"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView44"/>
+        <TextView
+                android:text="@string/loginFormTitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView"
+                android:textColor="@android:color/white" tools:layout_editor_absoluteY="8dp"
+                tools:layout_editor_absoluteX="276dp"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView42"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView43"/>
+        <TextView
+                android:text="@string/usernameField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/username"
+                android:textColor="@android:color/white" tools:layout_editor_absoluteY="280dp"
+                tools:layout_editor_absoluteX="44dp"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/editText3"
+                android:background="@color/colorPrimary" tools:layout_editor_absoluteY="211dp"
+                tools:layout_editor_absoluteX="114dp"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView38"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView39"/>
+        <TextView
+                android:text="@string/passwordFieldText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/password"
+                android:textColor="@android:color/white" tools:layout_editor_absoluteY="419dp"
+                tools:layout_editor_absoluteX="48dp"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:id="@+id/editText4"
+                android:background="@color/colorPrimary" tools:layout_editor_absoluteY="331dp"
+                tools:layout_editor_absoluteX="189dp"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView40"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView41"/>
+        <Button
+                android:text="@string/submitButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/loginButton"
+                android:textColor="@android:color/white" android:background="@color/colorPrimary"
+                tools:layout_editor_absoluteY="427dp" tools:layout_editor_absoluteX="315dp"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView120"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView115"/>
+        <TextView
+                android:text="@string/linkToRegisterForm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"
+                android:textColor="@android:color/white" tools:layout_editor_absoluteY="661dp"
+                tools:layout_editor_absoluteX="211dp"/>
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

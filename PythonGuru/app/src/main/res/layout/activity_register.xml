@@ -7,64 +7,101 @@
         android:layout_height="match_parent"
         tools:context=".RegisterActivity" android:id="@+id/registerForm" android:background="@color/colorPrimaryDark">
 
-    <TextView
-            android:text="@string/registerFormTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView3" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.476" app:layout_constraintVertical_bias="0.096"
-            android:textColor="@android:color/white"/>
-    <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/newUsername"
-            android:background="@color/colorPrimary"
-            android:layout_marginTop="324dp"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.845"/>
-    <Button
-            android:text="@string/registerButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/registerButton" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintHorizontal_bias="0.498"
-            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/newPassword"
-            android:background="@color/colorPrimary" android:textColor="@android:color/white"/>
-    <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:ems="10"
-            android:id="@+id/newPassword"
-            android:layout_marginTop="56dp"
-            app:layout_constraintTop_toBottomOf="@+id/newUsername" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" app:layout_constraintStart_toEndOf="@+id/password2"
-            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.508"
-            android:background="@color/colorPrimary"/>
-    <TextView
-            android:text="@string/newUsername"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/username2"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="324dp" app:layout_constraintTop_toTopOf="parent"
-            android:textColor="@android:color/white"/>
-    <TextView
-            android:text="@string/newPasssword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/password2" android:layout_marginStart="56dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/username2"
-            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.152" android:textColor="@android:color/white"/>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="369dp"
+            android:layout_height="612dp" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp">
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView35"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView36"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView37"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView34"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView33"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView32"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView29"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView30"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView31"/>
+        <TextView
+                android:text="@string/registerFormTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3"
+                android:textColor="@android:color/white" tools:layout_editor_absoluteY="8dp"
+                tools:layout_editor_absoluteX="259dp"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView27"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView28"/>
+        <TextView
+                android:text="@string/newUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/username2"
+                android:textColor="@android:color/white" tools:layout_editor_absoluteY="324dp"
+                tools:layout_editor_absoluteX="60dp"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/newUsername"
+                android:background="@color/colorPrimary"
+                tools:layout_editor_absoluteY="324dp" tools:layout_editor_absoluteX="8dp"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView23"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView24"/>
+        <TextView
+                android:text="@string/newPasssword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/password2"
+                android:textColor="@android:color/white" tools:layout_editor_absoluteY="351dp"
+                tools:layout_editor_absoluteX="56dp"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:id="@+id/newPassword"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp"
+                android:background="@color/colorPrimary" tools:layout_editor_absoluteY="404dp"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView25"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView26"/>
+        <Button
+                android:text="@string/registerButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/registerButton"
+                android:background="@color/colorPrimary" android:textColor="@android:color/white"
+                tools:layout_editor_absoluteY="437dp" tools:layout_editor_absoluteX="315dp"/>
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

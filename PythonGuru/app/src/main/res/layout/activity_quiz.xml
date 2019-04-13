@@ -21,18 +21,42 @@
                 app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
                 app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp">
-            <Button
+            <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/button"/>
-            <Button
+                    android:layout_height="wrap_content" android:id="@+id/textView104"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/textView103"/>
+            <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/button2"/>
-            <Button
+                    android:layout_height="wrap_content" android:id="@+id/textView102"/>
+            <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/button3"/>
-            <Button
+                    android:layout_height="wrap_content" android:id="@+id/textView101"/>
+            <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/button4"/>
+                    android:layout_height="wrap_content" android:id="@+id/textView100"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView99"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView98"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView97"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView96"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView95"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView94"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView93"/>
             <TextView
                     android:text="@string/quiz_number_txt"
                     android:layout_width="wrap_content"
@@ -48,30 +72,51 @@
                     android:layout_height="wrap_content"
                     android:background="@color/colorPrimary" android:id="@+id/q_1"
                     android:textColor="@android:color/white"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView105"/>
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/q_2"
                     android:background="@color/colorPrimary" android:textColor="@android:color/white"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView106"/>
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/q_3" android:background="@color/colorPrimary"
                     android:textColor="@android:color/white"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView107"/>
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/q_4"
                     android:background="@color/colorPrimary" android:textColor="@android:color/white"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView108"/>
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/q_5"
                     android:background="@color/colorPrimary" android:textColor="@android:color/white"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView109"/>
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/q_6"
                     android:background="@color/colorPrimary" android:textColor="@android:color/white"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView110"/>
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/q_7"
                     android:background="@color/colorPrimary" android:textColor="@android:color/white"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView111"/>
             <Button
                     android:text="@string/finished_quiz"
                     android:layout_width="match_parent"

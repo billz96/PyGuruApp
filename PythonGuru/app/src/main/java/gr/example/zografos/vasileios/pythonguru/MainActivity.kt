@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         var loginBtn : Button = findViewById(R.id.loginButton)
 
         loginBtn.setOnClickListener {
-            // get usernaem and password
+            // get username and password
             var username : TextView = findViewById(R.id.editText3)
             var password : TextView = findViewById(R.id.editText4)
 

@@ -9,12 +9,12 @@
 
     <LinearLayout
             android:orientation="vertical"
-            android:layout_width="385dp"
-            android:layout_height="565dp"
+            android:layout_width="363dp"
+            android:layout_height="567dp"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.2">
+            app:layout_constraintBottom_toBottomOf="parent">
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/textView13"/>
@@ -65,6 +65,9 @@
                 android:textColor="@android:color/white"
                 android:background="@color/colorPrimary" tools:layout_editor_absoluteY="188dp"/>
         <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView14"/>
+        <TextView
                 android:text="@string/mark_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -79,6 +82,9 @@
                 android:textColor="@android:color/white"
                 android:background="@color/colorPrimary" tools:layout_editor_absoluteY="263dp"
                 tools:layout_editor_absoluteX="338dp"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView15"/>
         <TextView
                 android:text="@string/mark_3"
                 android:layout_width="wrap_content"
@@ -95,6 +101,9 @@
                 android:background="@color/colorPrimary" tools:layout_editor_absoluteY="333dp"
                 tools:layout_editor_absoluteX="338dp"/>
         <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView16"/>
+        <TextView
                 android:text="@string/mark_4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -110,6 +119,9 @@
                 android:background="@color/colorPrimary" tools:layout_editor_absoluteY="411dp"
                 tools:layout_editor_absoluteX="334dp"/>
         <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView17"/>
+        <TextView
                 android:text="@string/mark_5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -124,6 +136,9 @@
                 app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
                 android:textColor="@android:color/white"
                 android:background="@color/colorPrimary" tools:layout_editor_absoluteY="491dp"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView18"/>
         <TextView
                 android:text="@string/mark_6"
                 android:layout_width="wrap_content"
@@ -141,6 +156,9 @@
                 android:background="@color/colorPrimary" tools:layout_editor_absoluteY="569dp"
                 tools:layout_editor_absoluteX="8dp"/>
         <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView19"/>
+        <TextView
                 android:text="@string/mark_7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -153,10 +171,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/comment7"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:textColor="@android:color/white" android:background="@color/colorPrimary"/>
+                android:textColor="@android:color/white" android:background="@color/colorPrimary"
+                tools:layout_editor_absoluteX="128dp" tools:layout_editor_absoluteY="45dp"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
