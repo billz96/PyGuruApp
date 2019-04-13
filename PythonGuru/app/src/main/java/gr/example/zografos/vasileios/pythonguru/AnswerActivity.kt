@@ -5,7 +5,6 @@ import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.RadioButton
-import android.widget.Toast
 
 class AnswerActivity : AppCompatActivity() {
 
@@ -22,7 +21,6 @@ class AnswerActivity : AppCompatActivity() {
         )
 
         val question = sharedPref.getString("PyGuruQuestion","")
-        val quiz = sharedPref.getInt("PyGuruQuiz", -1)
 
         val choicesBtns : List<RadioButton> = listOf(
             findViewById(R.id.choice1),
@@ -37,13 +35,9 @@ class AnswerActivity : AppCompatActivity() {
 
             // store selected answer
             btn.setOnClickListener {
-                if (quiz > 0) {
-                    val editor: SharedPreferences.Editor = sharedPref.edit()
-                    editor.putString("PyGuruAnswer" + question, choices[index])
-                    editor.commit()
-                } else {
-                    Toast.makeText(this, "You have already completed the test.", Toast.LENGTH_LONG).show()
-                }
+                val editor: SharedPreferences.Editor = sharedPref.edit()
+                editor.putString("PyGuruAnswer" + question, choices[index])
+                editor.commit()
             }
         }
     }

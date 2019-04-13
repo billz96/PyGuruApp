@@ -47,6 +47,8 @@ class QuizActivity : AppCompatActivity() {
 
             // setup listeners that show possible answers
             questionsBtns[index].setOnClickListener {
+                val quiz = sharedPref.getInt("PyGuruQuiz", -1)
+
                 if (quiz > 0) {
                     // save all choices(available answers)
                     val editor: SharedPreferences.Editor = sharedPref.edit()
@@ -114,7 +116,7 @@ class QuizActivity : AppCompatActivity() {
                 // find which answers are wright and which are wrong
                 var ansMsgs = ans.mapIndexed { i, a ->
                     val content = a.split(",")
-                    var res = "Answer-" + i +": "+ content[0] + " -> "
+                    var res = "Answer-" + (i+1) +": "+ content[0] + " -> "
                     if (content[1].equals("y")) {
                         res = res + "Correct"
                     } else {
