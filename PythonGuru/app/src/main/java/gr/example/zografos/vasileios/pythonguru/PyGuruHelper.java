@@ -146,7 +146,7 @@ public class PyGuruHelper extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put("username", username);
         contentValues.put("password", password);
-        contentValues.put("marks", "0.0,0.0,0.0,0.0,0.0,0.0,0.0"); // 7 quizzes total, the seventh one is the final
+        contentValues.put("marks", "0,0,0,0,0,0,0"); // 7 quizzes total, the seventh one is the final
         long res = db.insert("Students", null, contentValues);
         return res != -1;
     }
@@ -219,7 +219,7 @@ public class PyGuruHelper extends SQLiteOpenHelper {
         }
     }
 
-    public boolean updateMark (String username, float mark, int quiz) { // quiz: 1-7, mark: 0.0-1.0
+    public boolean updateMark (String username, Double mark, int quiz) { // quiz: 1-7, mark: 0.0-1.0
         // get user's marks
         SQLiteDatabase db = this.getWritableDatabase();
         String[] data = {username};
@@ -234,7 +234,7 @@ public class PyGuruHelper extends SQLiteOpenHelper {
             String[] marks = res.getString(marksIndex).split(",");
 
             // update marks array
-            marks[quiz-1] = Float.toString(mark);
+            marks[quiz-1] = Double.toString(mark).substring(0,4); // ex: 0.42... -> just 0.42
             String finalMarks = "";
             for (int i = 0; i < marks.length; i++) {
                 if (i < marks.length - 1) {
@@ -274,7 +274,7 @@ public class PyGuruHelper extends SQLiteOpenHelper {
         }
     }
 
-    public String commentMark(int quizIndex, float mark) { // quiz: 1-7, mark: 0.0-1.0
+    public String commentMark(int quizIndex, Double mark) { // quiz: 1-7, mark: 0.0-1.0
         if (mark <= 0.63) {
             return PyGuruHelper.bad[quizIndex];
         }
@@ -288,14 +288,6 @@ public class PyGuruHelper extends SQLiteOpenHelper {
         }
 
         return PyGuruHelper.excellent;
-    }
-
-    public float calculateMark(int correctAnswers, int quiz) { // quiz: 1-7
-        if (quiz < 7) { // 7 questions per quiz
-            return correctAnswers / 7;
-        } else {
-            return correctAnswers / 14; // 14 questions for final quiz
-        }
     }
 
     public ArrayList<HashMap<String, String>> getQuestions(int quiz) { // quiz: 1-7 and NOT 0-6!

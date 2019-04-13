@@ -25,7 +25,7 @@ class QuizActivity : AppCompatActivity() {
 
         // get quiz's questions
         val dbHelper = PyGuruHelper(this)
-        val questions = dbHelper.getQuestions(quiz)
+        val questions = dbHelper.getQuestions(quiz) // 7 questions!
 
         // display questions
         val questionsBtns : List<Button> = listOf(
@@ -80,7 +80,6 @@ class QuizActivity : AppCompatActivity() {
 
             // check if every question is answered
             if (ans.all { el -> !el.equals("") }) {
-                Toast.makeText(this, "Go see your mark in progress page.", Toast.LENGTH_LONG).show()
 
                 // find correct answers
                 val correctAns = ans.filter { el ->
@@ -89,12 +88,29 @@ class QuizActivity : AppCompatActivity() {
                 }
 
                 // calculate mark and update the old one
-                val mark = dbHelper.calculateMark(correctAns.size, quiz)
+                val mark = correctAns.size / 7.toDouble()
                 val username = sharedPref.getString("PyGuruUser", "")
                 val res = dbHelper.updateMark(username, mark, quiz)
                 if (!res) {
                     Toast.makeText(this, "Something went wrong!", Toast.LENGTH_LONG).show()
                 }
+
+                // show which answers are wright and which are wrong
+                val ansMsgs = ans.map { a ->
+                    val content = a.split(",")
+                    var res = content[0] + " -> "
+                    if (content[1].equals("y")) {
+                        res = res + "correct\n"
+                    } else {
+                        res = res + "wrong\n"
+                    }
+                    res
+                }
+
+                Toast.makeText(this, "Your answers:\n\t${ansMsgs.joinToString()}", Toast.LENGTH_LONG).show()
+
+                // show mark
+                Toast.makeText(this, "Your mark is: ${mark.toString().substring(0,4)}(=${correctAns.size}/7)", Toast.LENGTH_LONG).show()
             } else {
                 Toast.makeText(this, "You must answer every question!", Toast.LENGTH_LONG).show()
             }

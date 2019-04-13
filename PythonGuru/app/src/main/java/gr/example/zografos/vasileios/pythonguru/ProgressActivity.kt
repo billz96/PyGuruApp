@@ -45,7 +45,7 @@ class ProgressActivity : AppCompatActivity() {
 
         if (!marksStr.isEmpty()) {
             val marksStrs = marksStr.split(",")
-            val realMarks = marksStrs.map { markStr -> markStr.toFloat() }
+            val realMarks = marksStrs.map { markStr -> markStr.toDouble() }
 
             // display marks and comments
             marksViews.forEachIndexed { index, markView ->
