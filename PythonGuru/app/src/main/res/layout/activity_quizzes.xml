@@ -16,18 +16,27 @@
             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
             app:layout_constraintHorizontal_bias="0.478"
             app:layout_constraintVertical_bias="0.578" app:layout_constraintTop_toTopOf="parent">
-        <Button
+        <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/button13"
-                android:background="@color/colorPrimaryDark"/>
-        <Button
+                android:layout_height="wrap_content" android:id="@+id/textView143"/>
+        <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/button12"
-                android:background="@color/colorPrimaryDark"/>
-        <Button
+                android:layout_height="wrap_content" android:id="@+id/textView141"/>
+        <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/button11"
-                android:background="@color/colorPrimaryDark"/>
+                android:layout_height="wrap_content" android:id="@+id/textView140"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView138"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView137"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView135"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView131"/>
         <TextView
                 android:text="@string/tests"
                 android:layout_width="wrap_content"

@@ -68,4 +68,18 @@
     <string name="finished_quiz">done</string>
     <string name="finished_final_quiz">done</string>
     <string name="choose_txt">Choose yout answer</string>
+    <string name="faq_1">What\'s this app?</string>
+    <string name="a_1">This is a learning app.</string>
+    <string name="faq_2">What\'s the purpose of that app?</string>
+    <string name="a_2">It\'s purpuse is to learn / learn better the basics of Python.</string>
+    <string name="faq_txt">Frequently Asked Questions F.A.Qs</string>
+    <string name="faq_3">What is Python?</string>
+    <string name="a_3">It\'s a programming language aimed to build anything you like in a simple way.</string>
+    <string name="faq_4">What will i gain from learning Python through this app?</string>
+    <string name="a_4">You will know many different tricks about the basics of Python language.</string>
+    <string name="faq_5">Is this a free app?</string>
+    <string name="a_5">Yep, is a FREE and there isn\'t any premium content.</string>
+    <string name="faq_6">Does this app contains ads?</string>
+    <string name="a_6">No there aren\'t any ads.</string>
+    <string name="help_button">Help ?</string>
 </resources>

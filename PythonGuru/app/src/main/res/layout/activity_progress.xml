@@ -58,11 +58,11 @@
                 tools:layout_editor_absoluteY="160dp" tools:layout_editor_absoluteX="361dp"/>
         <TextView
                 android:text="@string/comment_1"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/comment1"
                 app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:background="@color/colorPrimary" tools:layout_editor_absoluteY="188dp"/>
         <TextView
                 android:layout_width="match_parent"
@@ -76,10 +76,10 @@
                 tools:layout_editor_absoluteX="8dp"/>
         <TextView
                 android:text="@string/comment_2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/comment2"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:background="@color/colorPrimary" tools:layout_editor_absoluteY="263dp"
                 tools:layout_editor_absoluteX="338dp"/>
         <TextView
@@ -94,10 +94,10 @@
                 tools:layout_editor_absoluteY="305dp" tools:layout_editor_absoluteX="361dp"/>
         <TextView
                 android:text="@string/comment3"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/comment3"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:background="@color/colorPrimary" tools:layout_editor_absoluteY="333dp"
                 tools:layout_editor_absoluteX="338dp"/>
         <TextView
@@ -112,10 +112,10 @@
                 tools:layout_editor_absoluteY="383dp" tools:layout_editor_absoluteX="361dp"/>
         <TextView
                 android:text="@string/comment_4"
-                android:layout_width="69dp"
-                android:layout_height="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:id="@+id/comment4"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:background="@color/colorPrimary" tools:layout_editor_absoluteY="411dp"
                 tools:layout_editor_absoluteX="334dp"/>
         <TextView
@@ -130,11 +130,11 @@
                 tools:layout_editor_absoluteY="461dp" tools:layout_editor_absoluteX="361dp"/>
         <TextView
                 android:text="@string/comment_5"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/comment5"
                 app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:background="@color/colorPrimary" tools:layout_editor_absoluteY="491dp"/>
         <TextView
                 android:layout_width="match_parent"
@@ -149,10 +149,10 @@
                 tools:layout_editor_absoluteY="539dp"/>
         <TextView
                 android:text="@string/comment_6"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/comment6"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:background="@color/colorPrimary" tools:layout_editor_absoluteY="569dp"
                 tools:layout_editor_absoluteX="8dp"/>
         <TextView
@@ -168,10 +168,10 @@
                 android:textColor="@android:color/white"/>
         <TextView
                 android:text="@string/comment_7"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/comment7"
-                android:textColor="@android:color/white" android:background="@color/colorPrimary"
+                android:textColor="@android:color/black" android:background="@color/colorPrimary"
                 tools:layout_editor_absoluteX="128dp" tools:layout_editor_absoluteY="45dp"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

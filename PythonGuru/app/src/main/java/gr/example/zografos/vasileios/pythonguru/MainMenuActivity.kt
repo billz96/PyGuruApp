@@ -53,5 +53,12 @@ class MainMenuActivity : AppCompatActivity() {
             val intent = Intent(this, LessonsActivity::class.java)
             startActivity(intent) // start lessons activity
         }
+
+        val helpBtn : Button = findViewById(R.id.helpBtn)
+        helpBtn.setOnClickListener {
+            // go to lessons
+            val intent = Intent(this, HelpActivity::class.java)
+            startActivity(intent) // start help activity
+        }
     }
 }

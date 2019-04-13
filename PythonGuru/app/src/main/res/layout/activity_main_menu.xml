@@ -69,5 +69,13 @@
                 android:id="@+id/testsButton"
                 android:background="@color/colorPrimary" android:textColor="@android:color/white"
                 tools:layout_editor_absoluteY="272dp" tools:layout_editor_absoluteX="76dp"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView124"/>
+        <Button
+                android:text="@string/help_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/helpBtn" android:background="@color/colorPrimary"
+                android:textColor="@android:color/white"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
