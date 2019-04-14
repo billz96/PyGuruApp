@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteException;
 import android.util.Log;
+import android.database.DatabaseUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -206,6 +207,12 @@ public class PyGuruHelper extends SQLiteOpenHelper {
         contentValues.put("marks", "0,0,0,0,0,0,0"); // 7 quizzes total, the seventh one is the final
         long res = db.insert("Students", null, contentValues);
         return res != -1;
+    }
+
+    public boolean userExists(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        int numOfRows = (int) DatabaseUtils.queryNumEntries(db, "Students");
+        return numOfRows == 1; // check if user already registered in the local database
     }
 
     public boolean findUser (String username, String password) {

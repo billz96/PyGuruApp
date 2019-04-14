@@ -25,11 +25,11 @@ class RegisterActivity : AppCompatActivity() {
             val password : TextView = findViewById(R.id.newPassword)
 
             if (!username.text.isEmpty() && !password.text.isEmpty()) {
-                var res : Boolean = dbHelper.findUser(username.text.toString(), password.text.toString())
+                var res : Boolean = dbHelper.userExists()
 
-                // student exists
+                // student already registered
                 if (res) {
-                    Toast.makeText(this, "Student exists.", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "You can have only 1 account per device.", Toast.LENGTH_LONG).show()
                 } else {
                     // new student
                     res = dbHelper.insertUser(username.text.toString(), password.text.toString())
