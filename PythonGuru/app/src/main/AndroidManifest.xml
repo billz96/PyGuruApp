@@ -9,29 +9,63 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".HelpActivity" android:screenOrientation="portrait">
+        <activity android:name=".NewQuestionActivity">
         </activity>
-        <activity android:name=".AnswerActivity" android:screenOrientation="portrait">
+        <activity android:name=".ResetTeacherPwdActivity">
         </activity>
-        <activity android:name=".FinalQuizActivity" android:screenOrientation="portrait">
+        <activity android:name=".TeacherMenuActivity">
         </activity>
-        <activity android:name=".QuizActivity" android:screenOrientation="portrait">
+        <activity android:name=".NewTeacherActivity">
         </activity>
-        <activity android:name=".LessonActivity" android:screenOrientation="portrait">
+        <activity android:name=".TeacherLoginActivity">
         </activity>
-        <activity android:name=".LessonsActivity" android:screenOrientation="portrait">
+        <activity
+                android:name=".HelpActivity"
+                android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".ProgressActivity" android:screenOrientation="portrait">
+        <activity
+                android:name=".AnswerActivity"
+                android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".ProfileActivity" android:screenOrientation="portrait">
+        <activity
+                android:name=".FinalQuizActivity"
+                android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".QuizzesActivity" android:screenOrientation="portrait">
+        <activity
+                android:name=".QuizActivity"
+                android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".RegisterActivity" android:screenOrientation="portrait">
+        <activity
+                android:name=".LessonActivity"
+                android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".MainMenuActivity" android:screenOrientation="portrait">
+        <activity
+                android:name=".LessonsActivity"
+                android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".MainActivity" android:screenOrientation="portrait">
+        <activity
+                android:name=".ProgressActivity"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".ProfileActivity"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".QuizzesActivity"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".RegisterActivity"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".MainMenuActivity"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".MainActivity"
+                android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

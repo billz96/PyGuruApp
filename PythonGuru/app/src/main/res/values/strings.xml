@@ -20,7 +20,7 @@
     <string name="passwordFieldText">password</string>
     <string name="welcomeText">Welcome</string>
     <string name="change_username">Change username</string>
-    <string name="your_profile">Your Profile Settings</string>
+    <string name="your_profile">Change your password</string>
     <string name="change_password">Change password</string>
     <string name="tests">Tests</string>
     <string name="test_1">Test 1</string>
@@ -83,4 +83,25 @@
     <string name="a_6">No there aren\'t any ads.</string>
     <string name="help_button">Help ?</string>
     <string name="logout_btn">logout</string>
+    <string name="teacher_login_txt">Are you a teacher ? Login here !</string>
+    <string name="teacher_login_to_pyguru">Login to PyGuru</string>
+    <string name="teacherName">username</string>
+    <string name="teacher_register_to_pyguru">Register to PyGuru</string>
+    <string name="teacher_register">Register</string>
+    <string name="new_teacher_name">username</string>
+    <string name="new_teacher_pwd">password</string>
+    <string name="teacher_logout">logout</string>
+    <string name="teacher_main_menu">Teacher\'s Main Menu</string>
+    <string name="teacher_welcome">Welcome</string>
+    <string name="reset_teacher_password">Reset Password</string>
+    <string name="add_question">Add question</string>
+    <string name="teacher_change_password">Change your password</string>
+    <string name="teacher_repeat_password">Repeat Password</string>
+    <string name="teacher_new_password">New Password</string>
+    <string name="add_new_question_form">Add new question</string>
+    <string name="question_body_field">Question body</string>
+    <string name="quiz_no">Quiz</string>
+    <string name="which_answer_is_correct">Which answer is correct</string>
+    <string name="answers_txts">Answers</string>
+    <string name="add_question_btn_txt">Add</string>
 </resources>

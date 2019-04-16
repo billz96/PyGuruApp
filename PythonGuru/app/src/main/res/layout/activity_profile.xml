@@ -102,7 +102,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/changePassword"
                 android:textColor="@android:color/white"
-                android:background="@color/colorPrimary" tools:layout_editor_absoluteY="432dp"
+                android:background="@android:color/holo_green_dark" tools:layout_editor_absoluteY="432dp"
                 tools:layout_editor_absoluteX="269dp"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

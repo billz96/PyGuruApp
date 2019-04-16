@@ -44,6 +44,9 @@ public class PyGuruHelper extends SQLiteOpenHelper {
         db.execSQL(
                 "CREATE TABLE IF NOT EXISTS Questions(id INTEGER PRIMARY KEY AUTOINCREMENT, body TEXT, quizNo INTEGER, answers TEXT)"
         );
+        db.execSQL(
+                "CREATE TABLE IF NOT EXISTS Teachers(id INTEGER PRIMARY KEY AUTOINCREMENT, username VARCHAR, password VARCHAR)"
+        );
 
         db.execSQL(
                 "INSERT INTO Lessons(id, body, title)" +
@@ -196,7 +199,71 @@ public class PyGuruHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS Students");
         db.execSQL("DROP TABLE IF EXISTS Lessons");
         db.execSQL("DROP TABLE IF EXISTS Questions");
+        db.execSQL("DROP TABLE IF EXISTS Teachers");
         onCreate(db);
+    }
+
+    public boolean insertTeacher (String username, String password) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("username", username);
+        contentValues.put("password", password);
+        long res = db.insert("Teachers", null, contentValues);
+        return res != -1; // if res == -1 then something gone wrong
+    }
+
+    public boolean findTeacher (String username, String password) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String[] data = {username, password};
+        Cursor res;
+        try {
+            res = db.rawQuery("SELECT * FROM Teachers WHERE username = ? AND password = ?", data);
+            res.moveToFirst();
+            boolean b = res.getCount() == 1; // check if teacher exists
+
+            if (!res.isClosed()) {
+                res.close();
+            }
+
+            return b;
+        } catch (Exception e) {
+            Log.e("Silly-Err: ", e.getMessage());
+            return false;
+        }
+    }
+
+    public boolean changeTeachersPassword(String username, String newPassword) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // update password
+        String[] data = {newPassword, username};
+        Cursor res;
+
+        try {
+            res = db.rawQuery("UPDATE Teachers SET password = ? WHERE username = ? ", data);
+            res.moveToFirst();
+
+            boolean b = res.getPosition() != -1; // did something gone wrong
+
+            if (!res.isClosed()) {
+                res.close();
+            }
+
+            return b;
+        } catch (Exception e) {
+            Log.e("Silly-Err: ", e.getMessage());
+            return false;
+        }
+    }
+
+    public boolean insertQuestion(String question, int quiz, String answers) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("body", question);
+        contentValues.put("quizNo", quiz);
+        contentValues.put("answers", answers);
+        long res = db.insert("Questions", null, contentValues);
+        return res != -1; // if res == -1 then something gone wrong
     }
 
     public boolean insertUser (String username, String password) {
@@ -221,6 +288,7 @@ public class PyGuruHelper extends SQLiteOpenHelper {
         Cursor res;
         try {
             res = db.rawQuery("SELECT * FROM Students WHERE username = ? AND password = ?", data);
+            res.moveToFirst();
             boolean b = res.getCount() == 1; // check if user exists
 
             if (!res.isClosed()) {
@@ -298,7 +366,7 @@ public class PyGuruHelper extends SQLiteOpenHelper {
             String[] marks = res.getString(marksIndex).split(",");
 
             // update marks array
-            marks[quiz-1] = Double.toString(mark).substring(0,4); // ex: 0.42... -> just 0.42
+            marks[quiz-1] = Double.toString(mark);
             String finalMarks = "";
             for (int i = 0; i < marks.length; i++) {
                 if (i < marks.length - 1) {

@@ -53,5 +53,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent) // start register activity
         }
+
+        val teacherText : TextView = findViewById(R.id.teacherLogin)
+        teacherText.setOnClickListener {
+            val intent = Intent(this, TeacherLoginActivity::class.java)
+            startActivity(intent) // start teacher login activity
+        }
     }
 }

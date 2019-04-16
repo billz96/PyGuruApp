@@ -101,7 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/registerButton"
-                android:background="@color/colorPrimary" android:textColor="@android:color/white"
+                android:background="@android:color/holo_green_dark" android:textColor="@android:color/white"
                 tools:layout_editor_absoluteY="437dp" tools:layout_editor_absoluteX="315dp"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

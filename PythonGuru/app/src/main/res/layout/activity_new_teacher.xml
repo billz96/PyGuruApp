@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".NewTeacherActivity" android:background="@color/colorPrimaryDark">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="369dp"
+            android:layout_height="721dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent">
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView161"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView167"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView170"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView171"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView172"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView173"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView174"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView175"/>
+        <TextView
+                android:text="@string/teacher_register_to_pyguru"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView176"
+                android:textColor="@android:color/white"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView177"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView178"/>
+        <TextView
+                android:text="@string/new_teacher_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/newTeacherName"
+                android:textColor="@android:color/white"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/new_teacher_name" android:background="@color/colorPrimary"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView180"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView181"/>
+        <TextView
+                android:text="@string/new_teacher_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/newTeacherPwd"
+                android:textColor="@android:color/white"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:id="@+id/new_teacher_pwd" android:background="@color/colorPrimary"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView183"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView184"/>
+        <Button
+                android:text="@string/teacher_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/teacher_register"
+                android:textColor="@android:color/white"
+                android:background="@android:color/holo_green_dark"/>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

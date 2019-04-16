@@ -132,7 +132,7 @@ class QuizActivity : AppCompatActivity() {
                 val dialogBuilder = AlertDialog.Builder(this)
 
                 // prepare items
-                val msgs = ansMsgs.plus("Your mark: ${mark.toString().substring(0,4)}(=${correctAns.size}/7)")
+                val msgs = ansMsgs.plus("Your mark: ${mark.toString()}(=${correctAns.size}/7)")
                 val items = msgs.toTypedArray() // convert string list to string array
 
                 // show the items

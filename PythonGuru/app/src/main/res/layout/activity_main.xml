@@ -97,7 +97,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/loginButton"
-                android:textColor="@android:color/white" android:background="@color/colorPrimary"
+                android:textColor="@android:color/white" android:background="@android:color/holo_green_dark"
                 tools:layout_editor_absoluteY="427dp" tools:layout_editor_absoluteX="315dp"/>
         <TextView
                 android:layout_width="match_parent"
@@ -112,5 +112,10 @@
                 android:id="@+id/textView2"
                 android:textColor="@android:color/white" tools:layout_editor_absoluteY="661dp"
                 tools:layout_editor_absoluteX="211dp"/>
+        <TextView
+                android:text="@string/teacher_login_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/teacherLogin"
+                android:textColor="@android:color/white"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
