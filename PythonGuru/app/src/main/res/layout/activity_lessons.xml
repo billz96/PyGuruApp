@@ -19,22 +19,45 @@
                 app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
                 app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
                 android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent">
-            <Button
+            <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/button31"
-                    android:background="@color/colorPrimaryDark"/>
-            <Button
+                    android:layout_height="wrap_content" android:id="@+id/textView256"/>
+            <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/button32"
-                    android:background="@color/colorPrimaryDark"/>
-            <Button
+                    android:layout_height="wrap_content" android:id="@+id/textView255"/>
+            <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/button33"
-                    android:background="@color/colorPrimaryDark"/>
-            <Button
+                    android:layout_height="wrap_content" android:id="@+id/textView254"/>
+            <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/button40"
-                    android:background="@color/colorPrimaryDark"/>
+                    android:layout_height="wrap_content" android:id="@+id/textView252"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView253"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView251"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView250"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView249"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView248"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView247"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView246"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView245"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView244"/>
             <TextView
                     android:text="@string/lessons"
                     android:layout_width="wrap_content"
@@ -42,10 +65,12 @@
                     android:id="@+id/textView7"
                     android:textColor="@android:color/white" tools:layout_editor_absoluteY="8dp"
                     tools:layout_editor_absoluteX="351dp"/>
-            <Button
+            <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/button22"
-                    android:background="@color/colorPrimaryDark"/>
+                    android:layout_height="wrap_content" android:id="@+id/textView257"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView258"/>
             <Button
                     android:text="@string/lesson_1"
                     android:layout_width="match_parent"
@@ -54,10 +79,12 @@
                     android:textColor="@android:color/white"
                     android:background="@color/colorPrimary" tools:layout_editor_absoluteY="156dp"
                     tools:layout_editor_absoluteX="72dp"/>
-            <Button
+            <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/button23"
-                    android:background="@color/colorPrimaryDark"/>
+                    android:layout_height="wrap_content" android:id="@+id/textView260"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView261"/>
             <Button
                     android:text="@string/lesson_2"
                     android:layout_width="match_parent"
@@ -65,10 +92,12 @@
                     android:id="@+id/lesson2"
                     android:background="@color/colorPrimary"
                     android:textColor="@android:color/white" tools:layout_editor_absoluteY="264dp"/>
-            <Button
+            <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/button24"
-                    android:background="@color/colorPrimaryDark"/>
+                    android:layout_height="wrap_content" android:id="@+id/textView262"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView263"/>
             <Button
                     android:text="@string/lesson_3_txt"
                     android:layout_width="431dp"
@@ -76,10 +105,12 @@
                     android:id="@+id/lesson3" android:textColor="@android:color/white"
                     android:background="@color/colorPrimary"
                     tools:layout_editor_absoluteY="96dp" tools:layout_editor_absoluteX="168dp"/>
-            <Button
+            <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/button25"
-                    android:background="@color/colorPrimaryDark"/>
+                    android:layout_height="wrap_content" android:id="@+id/textView265"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView264"/>
             <Button
                     android:text="@string/lesson_4_txt"
                     android:layout_width="406dp"
@@ -87,10 +118,12 @@
                     android:id="@+id/lesson4" android:textColor="@android:color/white"
                     android:background="@color/colorPrimary"
                     tools:layout_editor_absoluteY="252dp" tools:layout_editor_absoluteX="72dp"/>
-            <Button
+            <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/button26"
-                    android:background="@color/colorPrimaryDark"/>
+                    android:layout_height="wrap_content" android:id="@+id/textView266"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView267"/>
             <Button
                     android:text="@string/lesson_5"
                     android:layout_width="422dp"
@@ -98,10 +131,12 @@
                     android:id="@+id/lesson5"
                     android:background="@color/colorPrimary" android:textColor="@android:color/white"
                     tools:layout_editor_absoluteY="387dp" tools:layout_editor_absoluteX="72dp"/>
-            <Button
+            <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/button27"
-                    android:background="@color/colorPrimaryDark"/>
+                    android:layout_height="wrap_content" android:id="@+id/textView269"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView268"/>
             <Button
                     android:text="@string/lesson_6"
                     android:layout_width="match_parent"
