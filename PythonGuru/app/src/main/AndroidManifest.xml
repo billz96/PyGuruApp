@@ -9,15 +9,25 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".NewQuestionActivity">
+        <activity
+                android:name=".NewQuestionActivity"
+                android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".ResetTeacherPwdActivity">
+        <activity
+                android:name=".ResetTeacherPwdActivity"
+                android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".TeacherMenuActivity">
+        <activity
+                android:name=".TeacherMenuActivity"
+                android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".NewTeacherActivity">
+        <activity
+                android:name=".NewTeacherActivity"
+                android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".TeacherLoginActivity">
+        <activity
+                android:name=".TeacherLoginActivity"
+                android:screenOrientation="portrait">
         </activity>
         <activity
                 android:name=".HelpActivity"

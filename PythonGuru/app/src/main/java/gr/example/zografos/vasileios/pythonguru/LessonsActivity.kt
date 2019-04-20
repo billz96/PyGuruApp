@@ -26,6 +26,7 @@ class LessonsActivity : AppCompatActivity() {
 
         // setup click listeners which load the correct lesson
         lessonsViews.forEachIndexed { index, lessonView ->
+            lessonView.setAllCaps(false)
             lessonView.setOnClickListener {
                 // store current lesson id
                 val sharedPref: SharedPreferences = this.getSharedPreferences("PyGuruStudent", Context.MODE_PRIVATE)

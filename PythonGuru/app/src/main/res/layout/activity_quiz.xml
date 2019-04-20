@@ -66,7 +66,10 @@
                     app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
                     android:layout_marginTop="8dp"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"/>
+                    app:layout_constraintHorizontal_bias="0.5" android:textColor="@android:color/white"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView243"/>
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

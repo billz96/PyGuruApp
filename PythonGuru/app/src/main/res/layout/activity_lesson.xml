@@ -45,6 +45,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/lessonBody"
                 android:background="@color/colorPrimary"
-                tools:layout_editor_absoluteY="331dp" tools:layout_editor_absoluteX="303dp"/>
+                tools:layout_editor_absoluteY="331dp" tools:layout_editor_absoluteX="303dp"
+                android:textColor="@android:color/white"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

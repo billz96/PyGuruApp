@@ -46,6 +46,7 @@ class QuizActivity : AppCompatActivity() {
             val answers = question.get("answers")!!.split(";")
 
             // setup listeners that show possible answers
+            questionsBtns[index].setAllCaps(false)
             questionsBtns[index].setOnClickListener {
                 val quiz = sharedPref.getInt("PyGuruQuiz", -1)
 

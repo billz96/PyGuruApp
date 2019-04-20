@@ -24,9 +24,11 @@ class QuizzesActivity : AppCompatActivity() {
         )
 
         val finalQuiz : TextView = findViewById(R.id.quiz7)
+        finalQuiz.setAllCaps(false)
 
         // setup listeners
         quizzes.forEachIndexed { index, quiz ->
+            quiz.setAllCaps(false)
             quiz.setOnClickListener{
                 // store current quiz id
                 val sharedPref: SharedPreferences = this.getSharedPreferences("PyGuruStudent", Context.MODE_PRIVATE)
