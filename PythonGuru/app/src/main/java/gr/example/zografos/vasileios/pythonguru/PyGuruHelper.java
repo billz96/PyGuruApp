@@ -404,6 +404,26 @@ public class PyGuruHelper extends SQLiteOpenHelper {
         return numOfRows == 1; // check if user already registered in the local database
     }
 
+    public boolean findUsername (String username) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String[] data = {username};
+        Cursor res;
+        try {
+            res = db.rawQuery("SELECT * FROM Students WHERE username = ?", data);
+            res.moveToFirst();
+            boolean b = res.getCount() == 1; // check if user exists
+
+            if (!res.isClosed()) {
+                res.close();
+            }
+
+            return b;
+        } catch (Exception e) {
+            Log.e("Silly-Err: ", e.getMessage());
+            return false;
+        }
+    }
+
     public boolean findUser (String username, String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         String[] data = {username, password};

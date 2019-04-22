@@ -49,7 +49,16 @@ class ProgressActivity : AppCompatActivity() {
 
             // display marks and comments
             marksViews.forEachIndexed { index, markView ->
-                markView.text = markView.text.toString() + " " + marksStrs[index] // show mark
+                // check if user passed the current quiz
+                val mark = marksStrs[index].toDouble()
+
+                var testRes : String = "FAIL"
+                if (mark >= 0.63) {
+                    testRes = "PASS"
+                }
+
+                // show mark
+                markView.text = markView.text.toString() + " " + marksStrs[index] + " " + testRes
                 commentsViews[index].text = dbHelper.commentMark(index, realMarks[index]) // show comment
             }
 

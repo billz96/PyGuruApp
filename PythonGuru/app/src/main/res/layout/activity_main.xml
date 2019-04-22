@@ -117,5 +117,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/teacherLogin"
                 android:textColor="@android:color/white"/>
+        <TextView
+                android:text="@string/forgot_password_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/forgotPwd"
+                android:textColor="@android:color/white"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

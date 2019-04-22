@@ -104,4 +104,9 @@
     <string name="which_answer_is_correct">Which answer is correct</string>
     <string name="answers_txts">Answers</string>
     <string name="add_question_btn_txt">Add</string>
+    <string name="forgot_password_txt">Forgot Password</string>
+    <string name="forgot_password_title">Forgot Password</string>
+    <string name="username_fpwd">username</string>
+    <string name="button_fpwd">Change Password</string>
+    <string name="new_pasword_fpwd">new password</string>
 </resources>

@@ -59,5 +59,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, TeacherLoginActivity::class.java)
             startActivity(intent) // start teacher login activity
         }
+
+        val forgotPwdText : TextView = findViewById(R.id.forgotPwd)
+        forgotPwdText.setOnClickListener {
+            val intent = Intent(this, ForgotPwdActivity::class.java)
+            startActivity(intent) // start forgot password login activity
+        }
     }
 }
