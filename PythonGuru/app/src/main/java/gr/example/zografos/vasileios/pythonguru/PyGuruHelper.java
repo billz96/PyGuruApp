@@ -12,6 +12,8 @@ import android.database.DatabaseUtils;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Calendar;
+import java.text.SimpleDateFormat;
 
 public class PyGuruHelper extends SQLiteOpenHelper {
     public static final String DB_NAME = "PyGuru.db";
@@ -39,7 +41,7 @@ public class PyGuruHelper extends SQLiteOpenHelper {
                 "CREATE TABLE IF NOT EXISTS Students(id INTEGER PRIMARY KEY AUTOINCREMENT, username VARCHAR, password VARCHAR, marks TEXT)"
         );
         db.execSQL(
-                "CREATE TABLE IF NOT EXISTS Lessons(id INTEGER PRIMARY KEY AUTOINCREMENT, body TEXT, title TEXT, visits INTEGER DEFAULT 0)"
+                "CREATE TABLE IF NOT EXISTS Lessons(id INTEGER PRIMARY KEY AUTOINCREMENT, body TEXT, title TEXT, visits INTEGER DEFAULT 0, lastVisit TEXT DEFAULT 'No visits')"
         );
         db.execSQL(
                 "CREATE TABLE IF NOT EXISTS Questions(id INTEGER PRIMARY KEY AUTOINCREMENT, body TEXT, quizNo INTEGER, answers TEXT)"
@@ -626,6 +628,7 @@ public class PyGuruHelper extends SQLiteOpenHelper {
             while (res.isAfterLast() == false) {
                 HashMap<String, String> item = new HashMap();
                 item.put("title", res.getString(res.getColumnIndex("title")));
+                item.put("lastVisit", res.getString(res.getColumnIndex("lastVisit")));
 
                 lessons.add(item);
                 res.moveToNext();
@@ -648,6 +651,11 @@ public class PyGuruHelper extends SQLiteOpenHelper {
         Cursor res;
         Cursor res2;
 
+        // store the date of last visit
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
+        String datetime = dateFormat.format(c.getTime());
+
         try {
             // find lesson
             res = db.rawQuery("SELECT * FROM Lessons WHERE id = ?", data);
@@ -662,10 +670,10 @@ public class PyGuruHelper extends SQLiteOpenHelper {
 
             // update lesson's visits whenever someone click it
             String visits = Integer.toString(res.getInt(visitsIndex) + 1);
-            String[] data2 = {visits, Integer.toString(lesson)};
+            String[] data2 = {visits, datetime, Integer.toString(lesson)};
 
             try {
-                res2 = db.rawQuery("UPDATE Lessons SET visits = ? WHERE id = ? ", data2);
+                res2 = db.rawQuery("UPDATE Lessons SET visits = ?, lastVisit = ? WHERE id = ? ", data2);
                 res2.moveToFirst();
 
                 if (!res.isClosed()) {

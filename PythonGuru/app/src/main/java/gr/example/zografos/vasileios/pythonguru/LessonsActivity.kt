@@ -46,8 +46,9 @@ class LessonsActivity : AppCompatActivity() {
             // update each textview's text
             lessonsTitles.forEachIndexed { index, lessonsTitle ->
                 val title = lessonsTitle.get("title")
+                val lastVisit = lessonsTitle.get("lastVisit")
                 val txt = lessonsViews[index].text.toString()
-                lessonsViews[index].text = txt + " " + title
+                lessonsViews[index].text = txt + " " + title + "\nlast visit: " + lastVisit
             }
         }
     }
