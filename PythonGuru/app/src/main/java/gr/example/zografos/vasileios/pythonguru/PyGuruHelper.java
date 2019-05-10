@@ -653,7 +653,7 @@ public class PyGuruHelper extends SQLiteOpenHelper {
 
         // store the date of last visit
         Calendar c = Calendar.getInstance();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy - HH:mm:ss a");
         String datetime = dateFormat.format(c.getTime());
 
         try {
