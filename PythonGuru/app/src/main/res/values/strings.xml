@@ -84,9 +84,9 @@
     <string name="help_button">Help ?</string>
     <string name="logout_btn">logout</string>
     <string name="teacher_login_txt">Are you a teacher ? Login here !</string>
-    <string name="teacher_login_to_pyguru">Login to PyGuru</string>
+    <string name="teacher_login_to_pyguru">Login to PyGuru as a teacher</string>
     <string name="teacherName">username</string>
-    <string name="teacher_register_to_pyguru">Register to PyGuru</string>
+    <string name="teacher_register_to_pyguru">Register to PyGuru (Teacher)</string>
     <string name="teacher_register">Register</string>
     <string name="new_teacher_name">username</string>
     <string name="new_teacher_pwd">password</string>
@@ -95,7 +95,7 @@
     <string name="teacher_welcome">Welcome</string>
     <string name="reset_teacher_password">Reset Password</string>
     <string name="add_question">Add question</string>
-    <string name="teacher_change_password">Change your password</string>
+    <string name="teacher_change_password">Change your password (Teacher)</string>
     <string name="teacher_repeat_password">Repeat Password</string>
     <string name="teacher_new_password">New Password</string>
     <string name="add_new_question_form">Add new question</string>
@@ -109,4 +109,5 @@
     <string name="username_fpwd">username</string>
     <string name="button_fpwd">Change Password</string>
     <string name="new_pasword_fpwd">new password</string>
+    <string name="question_type_txt">Question Type</string>
 </resources>

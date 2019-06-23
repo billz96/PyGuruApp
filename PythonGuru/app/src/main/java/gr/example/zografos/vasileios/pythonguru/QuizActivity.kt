@@ -144,6 +144,7 @@ class QuizActivity : AppCompatActivity() {
                 val alertBox = dialogBuilder.create()
                 // set title
                 alertBox.setTitle("Your answers and mark")
+
                 // show alert box
                 alertBox.show()
             } else {

@@ -96,7 +96,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/textView168"/>
         <TextView
-                android:text="Not a teacher ? Register here!"
+                android:text="Not a teacher yet? Register here!"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/teacherRegister"
                 android:textColor="@android:color/white"/>
