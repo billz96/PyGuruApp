@@ -1,6 +1,7 @@
 package gr.example.zografos.vasileios.pythonguru
 
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
@@ -132,16 +133,21 @@ class QuizActivity : AppCompatActivity() {
                 // create the builder
                 val dialogBuilder = AlertDialog.Builder(this)
 
-                // prepare items
+                // prepare the items
                 val msgs = ansMsgs.plus("Your mark: ${mark.toString()}(=${correctAns.size}/7)")
                 val items = msgs.toTypedArray() // convert string list to string array
 
                 // show the items
                 dialogBuilder.setItems(items, null)
-                dialogBuilder.setPositiveButton("OK", null)
 
-                // create alert box
+                // set click listener
+                dialogBuilder.setPositiveButton("OK", DialogInterface.OnClickListener {
+                    dialog, id -> finish()
+                })
+
+                // create the alert box
                 val alertBox = dialogBuilder.create()
+
                 // set title
                 alertBox.setTitle("Your answers and mark")
 

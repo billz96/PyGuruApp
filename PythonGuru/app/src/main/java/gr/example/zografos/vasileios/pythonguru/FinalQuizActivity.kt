@@ -1,6 +1,7 @@
 package gr.example.zografos.vasileios.pythonguru
 
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
@@ -147,11 +148,15 @@ class FinalQuizActivity : AppCompatActivity() {
 
                 // show the items
                 dialogBuilder.setItems(items, null)
-                dialogBuilder.setPositiveButton("OK", null)
-                dialogBuilder.show()
 
-                // create alert box
+                // set click listener
+                dialogBuilder.setPositiveButton("OK", DialogInterface.OnClickListener {
+                        dialog, id -> finish()
+                })
+
+                // create the alert box
                 val alertBox = dialogBuilder.create()
+
                 // set title
                 alertBox.setTitle("Your answers and mark")
 
