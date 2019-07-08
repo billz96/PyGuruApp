@@ -45,21 +45,28 @@ class ProgressActivity : AppCompatActivity() {
 
         if (!marksStr.isEmpty()) {
             val marksStrs = marksStr.split(",")
-            val realMarks = marksStrs.map { markStr -> markStr.toDouble() }
+            //val realMarks = marksStrs.map { markStr -> markStr.toDouble() }
 
             // display marks and comments
             marksViews.forEachIndexed { index, markView ->
-                // check if user passed the current quiz
-                val mark = marksStrs[index].toDouble()
+                if (marksStrs[index] != "---") {
 
-                var testRes : String = "FAIL"
-                if (mark >= 0.63) {
-                    testRes = "PASS"
+                    // check if user passed the current quiz
+                    val mark = marksStrs[index].toDouble()
+
+                    var testRes: String = "FAIL"
+                    if (mark >= 63.0) {
+                        testRes = "PASS"
+                    }
+
+                    // show mark
+                    markView.text = markView.text.toString() + "  " + marksStrs[index] + "%  " + testRes
+                    commentsViews[index].text = dbHelper.commentMark(index, mark) // show comment
+                } else {
+                    // show mark
+                    markView.text = markView.text.toString() + "  " + marksStrs[index]
+                    commentsViews[index].text = "No comment." // show comment
                 }
-
-                // show mark
-                markView.text = markView.text.toString() + " " + marksStrs[index] + " " + testRes
-                commentsViews[index].text = dbHelper.commentMark(index, realMarks[index]) // show comment
             }
 
         }

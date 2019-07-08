@@ -43,7 +43,7 @@ class FinalQuizActivity : AppCompatActivity() {
         )
 
         questions.forEachIndexed { index, question ->
-            questionsBtns[index].text = question.get("body") // show question
+            questionsBtns[index].text = "${index+1}. ${question.get("body")}" // show question
 
             // find answers -> ["answer-1,y", "answer-2,n", "answer-3,n"]
             val answers = question.get("answers")!!.split(";")
@@ -106,7 +106,7 @@ class FinalQuizActivity : AppCompatActivity() {
                 }
 
                 // calculate mark and update the old one
-                val mark = correctAns.size / 14.toDouble()
+                val mark = Math.round((correctAns.size / 14.toDouble()) * 100).toDouble()
                 val username = sharedPref.getString("PyGuruUser", "")
                 val res = dbHelper.updateMark(username, mark, quiz)
                 if (!res) {
@@ -143,7 +143,7 @@ class FinalQuizActivity : AppCompatActivity() {
                 val dialogBuilder = AlertDialog.Builder(this)
 
                 // prepare the items
-                val msgs = ansMsgs.plus("Your mark is: ${mark.toString().substring(0,4)}(=${correctAns.size}/14)")
+                val msgs = ansMsgs.plus("Your mark is: ${mark.toString()}% (=${correctAns.size}/14)")
                 val items = msgs.toTypedArray() // convert string list to string array
 
                 // show the items

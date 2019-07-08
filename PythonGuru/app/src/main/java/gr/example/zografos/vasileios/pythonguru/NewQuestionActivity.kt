@@ -96,7 +96,8 @@ class NewQuestionActivity : AppCompatActivity() {
                         realAnsTxt = realAnsTxt + a
                     }
                 }
-                Toast.makeText(this, "$realAnsTxt", Toast.LENGTH_LONG).show()
+
+                // Toast.makeText(this, "$realAnsTxt", Toast.LENGTH_LONG).show()
 
                 // add question
                 val res = dbHelper.insertQuestion(questionBody, quizNo, realAnsTxt)

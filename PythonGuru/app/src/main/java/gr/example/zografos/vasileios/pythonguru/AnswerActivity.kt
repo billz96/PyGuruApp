@@ -1,10 +1,12 @@
 package gr.example.zografos.vasileios.pythonguru
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.RadioButton
+import android.widget.TextView
 
 class AnswerActivity : AppCompatActivity() {
 
@@ -20,7 +22,11 @@ class AnswerActivity : AppCompatActivity() {
             sharedPref.getString("PyGuruChoice3","")
         )
 
+        val currQuestion = findViewById<TextView>(R.id.currQuestion)
+
         val question = sharedPref.getString("PyGuruQuestion","")
+
+        currQuestion.text = "Choose your answer for question-No.${question} :"
 
         val choicesBtns : List<RadioButton> = listOf(
             findViewById(R.id.choice1),
@@ -39,6 +45,10 @@ class AnswerActivity : AppCompatActivity() {
                 editor.putString("PyGuruAnswer" + question, choices[index])
                 editor.commit()
             }
+
+            // go to current test
+            //val intent = Intent(this, QuizActivity::class.java)
+            //startActivity(intent)
         }
     }
 }

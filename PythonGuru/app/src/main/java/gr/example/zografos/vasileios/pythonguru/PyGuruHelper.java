@@ -395,7 +395,7 @@ public class PyGuruHelper extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put("username", username);
         contentValues.put("password", password);
-        contentValues.put("marks", "0,0,0,0,0,0,0"); // 7 quizzes total, the seventh one is the final
+        contentValues.put("marks", "---,---,---,---,---,---,---"); // 7 quizzes total, the seventh one is the final
         long res = db.insert("Students", null, contentValues);
         return res != -1;
     }
@@ -550,16 +550,16 @@ public class PyGuruHelper extends SQLiteOpenHelper {
         }
     }
 
-    public String commentMark(int quizIndex, Double mark) { // quiz: 1-7, mark: 0.0-1.0
-        if (mark <= 0.63) {
+    public String commentMark(int quizIndex, Double mark) { // quiz: 1-7, mark: 0.0 - 100.0
+        if (mark <= 63.0) {
             return PyGuruHelper.bad[quizIndex];
         }
 
-        if (mark > 0.63 && mark <= 0.75) {
+        if (mark > 63.0 && mark <= 75.0) {
             return PyGuruHelper.good;
         }
 
-        if (mark > 0.75 && mark < 0.9) {
+        if (mark > 75.0 && mark < 9.0) {
             return PyGuruHelper.veryGood;
         }
 
