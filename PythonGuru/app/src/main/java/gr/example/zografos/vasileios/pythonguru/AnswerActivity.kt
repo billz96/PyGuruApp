@@ -6,7 +6,9 @@ import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.TextView
+import android.widget.Toast
 
 class AnswerActivity : AppCompatActivity() {
 
@@ -22,9 +24,17 @@ class AnswerActivity : AppCompatActivity() {
             sharedPref.getString("PyGuruChoice3","")
         )
 
+        val selectedChoice = findViewById<TextView>(R.id.selectedChoice)
         val currQuestion = findViewById<TextView>(R.id.currQuestion)
-
         val question = sharedPref.getString("PyGuruQuestion","")
+        val answer = sharedPref.getString("PyGuruAnswer" + question, "")
+
+
+        // show old answer if it exists
+        if (answer != "") {
+            val parts = answer.split(",")
+            selectedChoice.text = "You have selected: \"${parts[0]}\""
+        }
 
         currQuestion.text = "Choose your answer for question-No.${question} :"
 
@@ -39,16 +49,19 @@ class AnswerActivity : AppCompatActivity() {
             var choice = choices[index].split(",")
             btn.text = choice[0] // choice[0] -> answer's text
 
+            // select current btn if it has the same text with the
+            // stored answer
+            val parts = answer.split(",")
+            if (answer != "" && btn.text.toString() == parts[0]) {
+                btn.setChecked(true)
+            }
+
             // store selected answer
             btn.setOnClickListener {
                 val editor: SharedPreferences.Editor = sharedPref.edit()
                 editor.putString("PyGuruAnswer" + question, choices[index])
                 editor.commit()
             }
-
-            // go to current test
-            //val intent = Intent(this, QuizActivity::class.java)
-            //startActivity(intent)
         }
     }
 }

@@ -124,14 +124,25 @@ class FinalQuizActivity : AppCompatActivity() {
                     editor.commit()
                 }
 
-                // find which answers are wright and which are wrong
+                // find and show which answers are right and which are wrong
                 var ansMsgs = ans.mapIndexed { i, a ->
                     val content = a.split(",")
-                    var res = "Answer-" + (i+1) +": "+ content[0] + " -> "
+                    var res = "Answer-" + (i+1) +": \""+ content[0] + "\" -> "
                     if (content[1].equals("y")) {
-                        res = res + "Correct"
+                        res = res + "Correct!\n"
                     } else {
-                        res = res + "Wrong"
+                        res = res + "Wrong!\n"
+
+                        // find and show the correct answer
+                        val _answers = questions[i].get("answers")!!.split(";")
+                        _answers.forEach { _ans ->
+                            val _content = _ans.split(",")
+                            if (_content[1].equals("y")) {
+                                val correctAns = _content[0]
+                                res = res + "Correct answer: \"${correctAns}\"\n"
+                            }
+                        }
+
                     }
                     res
                 }
@@ -143,7 +154,7 @@ class FinalQuizActivity : AppCompatActivity() {
                 val dialogBuilder = AlertDialog.Builder(this)
 
                 // prepare the items
-                val msgs = ansMsgs.plus("Your mark is: ${mark.toString()}% (=${correctAns.size}/14)")
+                val msgs = ansMsgs.plus("\nYour mark is: ${mark.toString()}% (=${correctAns.size}/14)")
                 val items = msgs.toTypedArray() // convert string list to string array
 
                 // show the items
