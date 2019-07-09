@@ -110,4 +110,6 @@
     <string name="button_fpwd">Change Password</string>
     <string name="new_pasword_fpwd">new password</string>
     <string name="question_type_txt">Question Type</string>
+    <string name="back_btn2">Back</string>
+    <string name="back_btn1">Back</string>
 </resources>

@@ -69,6 +69,10 @@
                     app:layout_constraintHorizontal_bias="0.5" android:textColor="@android:color/white"/>
             <TextView
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/currAns1"
+                    android:textColor="@android:color/white"/>
+            <TextView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/textView243"/>
             <Button
                     android:layout_width="match_parent"
@@ -120,6 +124,14 @@
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/textView111"/>
+            <Button
+                    android:text="@string/back_btn1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/backBtn1"
+                    android:background="@android:color/holo_green_dark" android:textColor="@android:color/white"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView216"/>
             <Button
                     android:text="@string/finished_quiz"
                     android:layout_width="match_parent"

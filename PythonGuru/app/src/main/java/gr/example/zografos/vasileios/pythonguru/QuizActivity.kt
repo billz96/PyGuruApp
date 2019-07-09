@@ -19,6 +19,7 @@ class QuizActivity : AppCompatActivity() {
 
         // get quiz's id
         val sharedPref: SharedPreferences = this.getSharedPreferences("PyGuruStudent", Context.MODE_PRIVATE)
+        val editor : SharedPreferences.Editor = sharedPref.edit()
         val quiz = sharedPref.getInt("PyGuruQuiz", -1)
 
         // set title
@@ -75,6 +76,23 @@ class QuizActivity : AppCompatActivity() {
 
         }
 
+        val backBtn = findViewById<Button>(R.id.backBtn1)
+        backBtn.setOnClickListener {
+            // remove quiz
+            editor.putInt("PyGuruQuiz", -1)
+            editor.commit()
+
+            // remove stored answers
+            for (i in 1..7) {
+                editor.putString("PyGuruAnswer$i", "")
+                editor.commit()
+            }
+
+            // go to quizzes list
+            val intent = Intent(this, QuizzesActivity::class.java)
+            startActivity(intent)
+        }
+
         val doneBtn : Button = findViewById(R.id.finishedQuiz)
         doneBtn.setOnClickListener {
             val ans  = listOf(
@@ -105,7 +123,6 @@ class QuizActivity : AppCompatActivity() {
                 }
 
                 // make test invalid by removing the quiz's index
-                val editor : SharedPreferences.Editor = sharedPref.edit()
                 editor.putInt("PyGuruQuiz", -1)
                 editor.commit()
 
@@ -165,7 +182,31 @@ class QuizActivity : AppCompatActivity() {
                 // show alert box
                 alertBox.show()
             } else {
-                Toast.makeText(this, "Either there are some missing questions or you have already completed the test.", Toast.LENGTH_LONG).show()
+
+                // find and show not answered questions
+                val currAnsTxt = findViewById<TextView>(R.id.currAns1)
+                val currAns = listOf(
+                    listOf(sharedPref.getString("PyGuruAnswer1", ""), 1),
+                    listOf(sharedPref.getString("PyGuruAnswer2", ""), 2),
+                    listOf(sharedPref.getString("PyGuruAnswer3", ""), 3),
+                    listOf(sharedPref.getString("PyGuruAnswer4", ""), 4),
+                    listOf(sharedPref.getString("PyGuruAnswer5", ""), 5),
+                    listOf(sharedPref.getString("PyGuruAnswer6", ""), 6),
+                    listOf(sharedPref.getString("PyGuruAnswer7", ""), 7)
+                )
+                val currAnsFiltered = currAns.filter { currA -> currA[0] == "" }
+                val currAnsIdx = currAnsFiltered.map { a -> a[1]}
+                currAnsIdx.forEachIndexed { i, a ->
+                    if (i == 0) {
+                        currAnsTxt.text = "  You haven't answered the questions: ${a},"
+                    } else if (i < currAnsFiltered.size - 1){
+                        currAnsTxt.text = "${currAnsTxt.text} ${a},"
+                    } else {
+                        currAnsTxt.text = "${currAnsTxt.text} ${a}."
+                    }
+                }
+
+                Toast.makeText(this, "There are some missing questions.", Toast.LENGTH_LONG).show()
             }
         }
     }

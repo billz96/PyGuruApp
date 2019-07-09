@@ -60,6 +60,10 @@
                     android:textColor="@android:color/white"/>
             <TextView
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/currAns2"
+                    android:textColor="@android:color/white"/>
+            <TextView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/textView242"/>
             <Button
                     android:layout_width="match_parent"
@@ -159,6 +163,14 @@
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/textView80"/>
+            <Button
+                    android:text="@string/back_btn2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/backBtn2"
+                    android:textColor="@android:color/white" android:background="@android:color/holo_green_dark"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView9"/>
             <Button
                     android:text="@string/finished_final_quiz"
                     android:layout_width="match_parent"

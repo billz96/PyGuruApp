@@ -33,7 +33,7 @@ class AnswerActivity : AppCompatActivity() {
         // show old answer if it exists
         if (answer != "") {
             val parts = answer.split(",")
-            selectedChoice.text = "You have selected: \"${parts[0]}\""
+            selectedChoice.text = "You have selected: \"${parts[0]}\"."
         }
 
         currQuestion.text = "Choose your answer for question-No.${question} :"
