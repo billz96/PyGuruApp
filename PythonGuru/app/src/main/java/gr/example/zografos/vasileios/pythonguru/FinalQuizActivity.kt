@@ -215,7 +215,7 @@ class FinalQuizActivity : AppCompatActivity() {
                 val currAnsIdx = currAnsFiltered.map { a -> a[1]}
                 currAnsIdx.forEachIndexed { i, a ->
                     if (i == 0) {
-                        currAnsTxt.text = " You haven't answered the questions: ${a},"
+                        currAnsTxt.text = "You haven't answered the questions: ${a},"
                     } else if (i < currAnsFiltered.size - 1){
                         currAnsTxt.text = "${currAnsTxt.text} ${a},"
                     } else {

@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import org.w3c.dom.Text
 
 class TeacherLoginActivity : AppCompatActivity() {
 
@@ -22,6 +23,13 @@ class TeacherLoginActivity : AppCompatActivity() {
             // go to teacher's register activity
             val intent = Intent(this, NewTeacherActivity::class.java)
             startActivity(intent) // start new teacher activity
+        }
+
+        val backTxt = findViewById<TextView>(R.id.backTxt)
+        backTxt.setOnClickListener {
+            // go to user's login activity
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent) // start user login activity
         }
 
         val loginBtn : Button = findViewById(R.id.teacherLoginBtn)

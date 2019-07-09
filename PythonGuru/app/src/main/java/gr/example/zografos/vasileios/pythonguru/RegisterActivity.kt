@@ -34,6 +34,9 @@ class RegisterActivity : AppCompatActivity() {
                     // new student
                     res = dbHelper.insertUser(username.text.toString(), password.text.toString())
                     if (res) {
+                        // show success message
+                        Toast.makeText(this, "Your registration is finished!", Toast.LENGTH_LONG).show()
+
                         // go to login screen
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent) // start login activity

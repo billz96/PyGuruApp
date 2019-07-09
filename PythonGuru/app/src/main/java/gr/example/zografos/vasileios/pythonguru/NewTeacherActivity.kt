@@ -29,6 +29,9 @@ class NewTeacherActivity : AppCompatActivity() {
                     // new teacher
                     res = dbHelper.insertTeacher(unameTxt, pwdTxt)
                     if (res) {
+                        // show success message
+                        Toast.makeText(this, "Your registration is finished!", Toast.LENGTH_LONG).show()
+
                         // go to login screen
                         val intent = Intent(this, TeacherLoginActivity::class.java)
                         startActivity(intent) // start login activity
